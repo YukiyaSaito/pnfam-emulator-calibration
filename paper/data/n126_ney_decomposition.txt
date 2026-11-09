@@ -1,0 +1,22 @@
+# Decomposition of the SkO' N=126 difference to Ney et al. (PRC 102, 034326) -- computed 2026-10-21
+# Per nucleus: quadratic surface log10T(V0,C1s) fitted to the 20 batch-30001 pnFAM runs (Q-corrected, Full-set posterior draws),
+# calibration/SKOP/HL/<nuc>/batch30001; evaluated at our posterior medians (V0,C1s)=(-306.358,114.979) and at the
+# Mustonen-Engel couplings (-346.352,128.279). Ney = FRIB_projects/beta_decay/data/data_Evan.txt (their SkO' table: ME couplings, bare Q).
+# The ME V0 lies 3 MeV fm^3 below the lowest draw (-343): slight extrapolation of the surface.
+# param = ours@ME - ours@med (parameter effect at corrected Q); Q_and_setup = Ney - ours@ME (bare vs corrected Q; our
+# reproduction of Ney with their setup agreed to +0.02..+0.05 dec at N=126, so this column is mainly the Q correction).
+# slopes from a linear fit, dlog10T per 10 MeV fm^3.
+nucleus	Z	slope_V0	slope_C1s	ours_med	ours_ME	Ney	param	Q_and_setup
+Ba182	56	+0.0008	+0.0515	-2.916	-2.857	-2.487	+0.059	+0.370
+Ce184	58	+0.0011	+0.0522	-2.744	-2.686	-2.303	+0.059	+0.382
+Nd186	60	+0.0016	+0.0532	-2.539	-2.481	-2.090	+0.058	+0.391
+Sm188	62	+0.0025	+0.0539	-2.292	-2.237	-1.835	+0.055	+0.403
+Gd190	64	+0.0040	+0.0537	-1.993	-1.945	-1.529	+0.048	+0.416
+Dy192	66	+0.0061	+0.0522	-1.636	-1.600	-1.167	+0.036	+0.433
+Er194	68	+0.0085	+0.0488	-1.205	-1.184	-0.740	+0.020	+0.444
+Yb196	70	+0.0105	+0.0421	-0.691	-0.688	-0.244	+0.003	+0.445
+Hf198	72	+0.0101	+0.0316	-0.097	-0.106	0.302	-0.009	+0.408
+W200	74	+0.0075	+0.0247	0.536	0.531	0.880	-0.005	+0.350
+Os202	76	+0.0098	+0.0272	1.255	1.243	1.593	-0.012	+0.351
+Pt204	78	+0.0157	+0.0319	2.261	2.226	2.579	-0.035	+0.353
+Hg206	80	+0.0316	+0.0362	3.952	3.840	4.134	-0.112	+0.293

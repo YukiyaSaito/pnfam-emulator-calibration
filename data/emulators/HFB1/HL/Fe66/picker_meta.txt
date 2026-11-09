@@ -1,0 +1,5 @@
+source_fold=/mnt/home/saitoyu1/SMLR/cv/HFB1/HL/Fe66/fold_3
+best_val_cost=1.244730e-05
+source_meta=/mnt/home/saitoyu1/SMLR/cv/HFB1/HL/Fe66/fold_3/seed_3043/meta.txt
+train_set_source=train_set.txt
+n_train=47

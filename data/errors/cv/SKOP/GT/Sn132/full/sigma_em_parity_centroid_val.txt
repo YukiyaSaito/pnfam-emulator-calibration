@@ -1,0 +1,23 @@
+# CV pooled sigma_em summary
+# base_dir:    /mnt/home/saitoyu1/SMLR/cv/SKOP/centroid/Sn132/full
+# parity_file: parity_centroid_val.txt
+# folds:       10
+
+[centroid]
+N=100
+bias=-3.792203e-04
+rmse=4.249632e-03
+sigma_em=4.232678e-03
+# per-fold (fold, N, bias, rmse):
+  fold_0  N=20  bias=-1.127454e-03  rmse=7.459561e-03
+  fold_1  N=20  bias=4.687755e-04  rmse=2.397585e-03
+  fold_2  N=20  bias=-3.702824e-04  rmse=2.753966e-03
+  fold_3  N=20  bias=1.376208e-04  rmse=2.740096e-03
+  fold_4  N=20  bias=-1.004761e-03  rmse=3.716309e-03
+# heteroscedastic (bin, true_lo, true_hi, N, bias, sigma):
+  bin=0  [1.534271e+01, 1.673006e+01]  N=20  bias=-1.254530e-03  sigma=7.128416e-03
+  bin=1  [1.673006e+01, 1.955877e+01]  N=20  bias=9.793362e-04  sigma=2.349592e-03
+  bin=2  [1.955877e+01, 2.280049e+01]  N=20  bias=-1.338082e-03  sigma=3.304611e-03
+  bin=3  [2.280049e+01, 2.510556e+01]  N=20  bias=3.245930e-04  sigma=2.382831e-03
+  bin=4  [2.510556e+01, 2.558423e+01]  N=20  bias=-6.074185e-04  sigma=3.544842e-03
+

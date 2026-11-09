@@ -1,0 +1,5 @@
+source_fold=/mnt/home/saitoyu1/SMLR/cv/SLY4/centroid/Sn132/full/fold_2
+best_val_cost=1.593544e-05
+source_meta=/mnt/home/saitoyu1/SMLR/cv/SLY4/centroid/Sn132/full/fold_2/seed_2043/meta.txt
+train_set_source=train_set.txt
+n_train=80

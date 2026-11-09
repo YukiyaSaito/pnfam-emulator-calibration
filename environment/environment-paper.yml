@@ -1,0 +1,17 @@
+# Environment for the figure and table scripts (paper/scripts) and the design scripts (design/).
+# Versions are those used for the published figures (2026-11); nearby versions should work.
+name: pnfam-calib-paper
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - numpy=2.3
+  - scipy=1.16
+  - matplotlib=3.10
+  - pandas=3.0
+  - xarray=2026.2
+  - arviz=0.23
+  - seaborn=0.13
+  - h5py=3.15
+  - netcdf4
+  # LaTeX is used for figure text (matplotlib text.usetex): a TeX distribution with type1cm, dvipng and the
+  # standard fonts must be on PATH, or set text.usetex to False in paper/scripts/paper_style.py.

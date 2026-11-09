@@ -1,0 +1,23 @@
+# CV pooled sigma_em summary
+# base_dir:    /mnt/home/saitoyu1/SMLR/cv/HFB1/HL/Zn74
+# parity_file: parity_half_life_val.txt
+# folds:       10
+
+[half_life]
+N=59
+bias=3.786897e-01
+rmse=1.256007e+01
+sigma_em=1.255436e+01
+# per-fold (fold, N, bias, rmse):
+  fold_0  N=12  bias=6.433066e-01  rmse=4.471397e+00
+  fold_1  N=12  bias=-5.497709e+00  rmse=1.243102e+01
+  fold_2  N=12  bias=5.434459e+00  rmse=2.319539e+01
+  fold_3  N=12  bias=1.045220e+00  rmse=6.170547e+00
+  fold_4  N=11  bias=2.581248e-01  rmse=5.222869e+00
+# heteroscedastic (bin, true_lo, true_hi, N, bias, sigma):
+  bin=0  [8.759758e+01, 4.081901e+02]  N=12  bias=-8.403627e-01  sigma=5.021700e+00
+  bin=1  [4.081901e+02, 6.713911e+02]  N=12  bias=-1.224898e+00  sigma=5.275252e+00
+  bin=2  [6.713911e+02, 1.244284e+03]  N=11  bias=-3.215669e+00  sigma=9.717044e+00
+  bin=3  [1.244284e+03, 1.892462e+03]  N=12  bias=6.695296e-01  sigma=5.568412e+00
+  bin=4  [1.892462e+03, 3.167759e+03]  N=12  bias=6.205319e+00  sigma=2.354539e+01
+

@@ -1,0 +1,8 @@
+batch=30001
+functional=SKOP
+nucleus=Nd186
+k=20
+seed=20261013
+trace=/mnt/home/saitoyu1/SMLR/results/SKOP/bayes_t4gtt4_sthe1_domw10_q_POOL40_SKOP_gtall/centroid/trace.nc
+design=posterior draws, stratified in vpair (one draw per equal-probability slice)
+purpose=direct pnFAM prediction; local-surface fit + full-posterior propagation (predict_from_draws.py); NEVER merged into training

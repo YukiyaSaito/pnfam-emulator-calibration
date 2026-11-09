@@ -1,0 +1,43 @@
+# certified sigma_em [log10 s] from frozen batch 21001, SKOP; trace ../results/SKOP/bayes_t4gtt4_sthe1_domw10_q_POOL40_SKOP_gtall/centroid
+# rule: plain RMS incl. bias, or posterior-weighted RMS if >1.3x plain
+# feed to bayes_mcmc.py --sigma-em-file <this file>
+Ar48=0.0013
+Ba148=0.0015
+Cd126=0.0015
+Cd132=0.0005
+Ce152=0.0004
+Cr56=0.0171
+Cr60=0.0042
+Er174=0.0013
+Fe66=0.0008
+Gd166=0.0026
+Hg208=0.0011
+Kr92=0.0032
+Kr96=0.0012
+Mo108=0.0005
+Nd156=0.0011
+Ni72=0.0126
+Pd114=0.0016
+Pd120=0.0016
+Pt204=0.0009
+Ra234=0.0012
+Rn226=0.0014
+Rn228=0.0025
+Ru114=0.0011
+Se88=0.0038
+Sm156=0.0014
+Sm162=0.0004
+Sn134=0.0006
+Sr102=0.0003
+Sr92=0.0018
+Sr96=0.0009
+Te134=0.0027
+Th236=0.0023
+Ti58=0.0036
+U242=0.0009
+Xe142=0.0018
+Yb180=0.0032
+Zn74=0.0053
+Zn78=0.0006
+Zn82=0.0004
+Zr100=0.0020

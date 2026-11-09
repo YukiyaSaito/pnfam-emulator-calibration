@@ -1,0 +1,42 @@
+# sample_index  total_hl
+# 2	3.167071e+02
+# 5	1.266308e+10	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 6	3.274268e+08
+9	1.722040e+08
+# 10	2.947638e+07
+# 13	4.357925e+01
+# 14	2.970185e+10	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 17	5.084856e+10	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 21	3.901313e+05
+22	4.153046e+03
+# 25	2.084940e+10	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 29	3.850773e+02
+# 30	1.316195e+10	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 33	1.813767e+11	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 34	7.349728e+00
+38	2.062760e+06
+# 41	4.888242e+03
+# 42	1.108506e+08
+# 46	2.001561e+10	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 49	7.035114e+10	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 50	7.013222e+00
+# 53	1.260742e+07
+# 54	1.401777e+03
+# 57	9.312139e+09	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 61	5.056952e+02
+# 66	5.148962e+01
+# 69	1.726279e+09	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 70	8.497137e+08	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+73	9.400564e+04
+# 74	1.369534e+06
+# 77	4.251617e+00
+# 78	1.275967e+10	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 81	1.658555e+10	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 82	3.474484e+09	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 85	5.177759e+07
+# 86	4.661829e+02
+# 90	1.694000e+08
+# 93	7.019887e+01
+# 94	3.489178e+10	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 97	2.261380e+11	# unresolved: |rate| < 1e-09 /s (numerical residual), excluded from training
+# 98	7.082434e+01

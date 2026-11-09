@@ -1,0 +1,98 @@
+settings: hl=A gt=A mode=centroid pernuc=0
+  likelihood: HL=studentt nu=4  GT=studentt nu=4  sigma_the prior scale=1
+  prior: domain  V_LIM=default  TAPER_W=10  VPAIR_MU=default  CS_LOWER=default
+  sigma_Q file: /mnt/research/nuclear-theory/Saito/pnfam-emulator-calibration/calibration/runs/../../data/errors/sigma_q_HFB1.dat
+  sampler: smc draws=2000 tune=1000 chains=4 cores=4 seed=42
+  ->  results/HFB1/bayes_t4gtt4_sthe1_domw10_q_A_HFB1_sem21001/
+Initializing SMC sampler...
+Sampling 4 chains in 4 jobs
+sigma_em from file /mnt/research/nuclear-theory/Saito/pnfam-emulator-calibration/calibration/runs/../../data/errors/sigma_em_frozen_HFB1_batch21001.txt: Ar48=0.0006 Ba148=0.0007 Cd126=0.0011 Cd132=0.0012 Ce152=0.0017 Cr56=0.0047 Cr60=0.0066 Er174=0.0010 Fe66=0.0013 Gd166=0.0006 Hg208=0.0007 Kr92=0.0015 Kr96=0.0020 Mo108=0.0009 Nd156=0.0026 Ni72=0.0004 Pd114=0.0045 Pd120=0.0021 Pt200=0.0016 Pt204=0.0005 Ra234=0.0010 Rn226=0.0030 Rn228=0.0014 Ru114=0.0007 Se88=0.0008 Sm156=0.0013 Sm162=0.0013 Sn134=0.0018 Sr102=0.0003 Sr92=0.0050 Sr96=0.0018 Th236=0.0018 Ti58=0.0021 U242=0.0009 Xe142=0.0089 Yb180=0.0006 Zn74=0.0036 Zn78=0.0026 Zn82=0.0018 Zr100=0.0029
+HL set 'A' -> 10 nuclei: ['Ar48', 'Ba148', 'Cd126', 'Cr60', 'Kr92', 'Ni72', 'Ru114', 'Sr102', 'Zn82', 'Sn134']
+GT set 'A' -> 6 nuclei: ['Pb_208', 'Ca_48', 'Ge_76', 'Te_130', 'Sn_112', 'Zr_90']
+=== Bayesian calibration: functional=HFB1  gt_mode=centroid ===
+Output dir: /mnt/ufs18/rs/nuclear-theory/Saito/pnfam-emulator-calibration/results/HFB1/bayes_t4gtt4_sthe1_domw10_q_A_HFB1_sem21001/centroid
+Loading HL emulators...
+  10/10 HL emulators loaded
+Loading GT (centroid) emulators...
+  6/6 GT emulators loaded
+Loading CV sigma_em from /mnt/ufs18/rs/nuclear-theory/Saito/pnfam-emulator-calibration/data/errors/cv/HFB1...
+  HL    sigma_em[Ar48    ] = 3.092e-03 log10(s)  (N=59, bias=+1.60e-04)
+  HL    sigma_em[Ba148   ] = 1.570e-03 log10(s)  (N=59, bias=+9.70e-05)
+  HL    sigma_em[Cd126   ] = 1.341e-03 log10(s)  (N=59, bias=-1.28e-05)
+  HL    sigma_em[Cr60    ] = 2.210e-02 log10(s)  (N=59, bias=+2.59e-03)
+  HL    sigma_em[Kr92    ] = 1.993e-03 log10(s)  (N=59, bias=-8.22e-05)
+  HL    sigma_em[Ni72    ] = 1.628e-03 log10(s)  (N=59, bias=-2.42e-04)
+  HL    sigma_em[Ru114   ] = 1.600e-03 log10(s)  (N=59, bias=-1.10e-05)
+  HL    sigma_em[Sr102   ] = 9.720e-04 log10(s)  (N=59, bias=+1.47e-04)
+  HL    sigma_em[Zn82    ] = 3.217e-03 log10(s)  (N=59, bias=-1.20e-04)
+  HL    sigma_em[Sn134   ] = 3.821e-03 log10(s)  (N=59, bias=+1.97e-04)
+  GT(c) sigma_em[Pb_208  ] = 3.494e-03 MeV       (N=100, bias=-3.51e-04)
+  GT(c) sigma_em[Ca_48   ] = 6.280e-03 MeV       (N=100, bias=-3.57e-04)
+  GT(c) sigma_em[Ge_76   ] = 1.861e-02 MeV       (N=100, bias=+7.37e-05)
+  GT(c) sigma_em[Te_130  ] = 1.022e-02 MeV       (N=100, bias=+3.09e-04)
+  GT(c) sigma_em[Sn_112  ] = 1.177e-02 MeV       (N=100, bias=-6.61e-04)
+  GT(c) sigma_em[Zr_90   ] = 2.588e-02 MeV       (N=100, bias=+3.43e-03)
+  HL    sigma_em[Ar48    ] OVERRIDDEN: 0.0030917806318719768 -> 6.000e-04 (held-out/frozen-set value)
+  HL    sigma_em[Ba148   ] OVERRIDDEN: 0.0015704364143794346 -> 7.000e-04 (held-out/frozen-set value)
+  HL    sigma_em[Cd126   ] OVERRIDDEN: 0.0013406323417027698 -> 1.100e-03 (held-out/frozen-set value)
+  HL    sigma_em[Cd132   ] OVERRIDDEN: none -> 1.200e-03 (held-out/frozen-set value)
+  HL    sigma_em[Ce152   ] OVERRIDDEN: none -> 1.700e-03 (held-out/frozen-set value)
+  HL    sigma_em[Cr56    ] OVERRIDDEN: none -> 4.700e-03 (held-out/frozen-set value)
+  HL    sigma_em[Cr60    ] OVERRIDDEN: 0.02210127829935032 -> 6.600e-03 (held-out/frozen-set value)
+  HL    sigma_em[Er174   ] OVERRIDDEN: none -> 1.000e-03 (held-out/frozen-set value)
+  HL    sigma_em[Fe66    ] OVERRIDDEN: none -> 1.300e-03 (held-out/frozen-set value)
+  HL    sigma_em[Gd166   ] OVERRIDDEN: none -> 6.000e-04 (held-out/frozen-set value)
+  HL    sigma_em[Hg208   ] OVERRIDDEN: none -> 7.000e-04 (held-out/frozen-set value)
+  HL    sigma_em[Kr92    ] OVERRIDDEN: 0.0019930500310369093 -> 1.500e-03 (held-out/frozen-set value)
+  HL    sigma_em[Kr96    ] OVERRIDDEN: none -> 2.000e-03 (held-out/frozen-set value)
+  HL    sigma_em[Mo108   ] OVERRIDDEN: none -> 9.000e-04 (held-out/frozen-set value)
+  HL    sigma_em[Nd156   ] OVERRIDDEN: none -> 2.600e-03 (held-out/frozen-set value)
+  HL    sigma_em[Ni72    ] OVERRIDDEN: 0.0016280945698069625 -> 4.000e-04 (held-out/frozen-set value)
+  HL    sigma_em[Pd114   ] OVERRIDDEN: none -> 4.500e-03 (held-out/frozen-set value)
+  HL    sigma_em[Pd120   ] OVERRIDDEN: none -> 2.100e-03 (held-out/frozen-set value)
+  HL    sigma_em[Pt200   ] OVERRIDDEN: none -> 1.600e-03 (held-out/frozen-set value)
+  HL    sigma_em[Pt204   ] OVERRIDDEN: none -> 5.000e-04 (held-out/frozen-set value)
+  HL    sigma_em[Ra234   ] OVERRIDDEN: none -> 1.000e-03 (held-out/frozen-set value)
+  HL    sigma_em[Rn226   ] OVERRIDDEN: none -> 3.000e-03 (held-out/frozen-set value)
+  HL    sigma_em[Rn228   ] OVERRIDDEN: none -> 1.400e-03 (held-out/frozen-set value)
+  HL    sigma_em[Ru114   ] OVERRIDDEN: 0.0016000725735347873 -> 7.000e-04 (held-out/frozen-set value)
+  HL    sigma_em[Se88    ] OVERRIDDEN: none -> 8.000e-04 (held-out/frozen-set value)
+  HL    sigma_em[Sm156   ] OVERRIDDEN: none -> 1.300e-03 (held-out/frozen-set value)
+  HL    sigma_em[Sm162   ] OVERRIDDEN: none -> 1.300e-03 (held-out/frozen-set value)
+  HL    sigma_em[Sn134   ] OVERRIDDEN: 0.0038211374883928275 -> 1.800e-03 (held-out/frozen-set value)
+  HL    sigma_em[Sr102   ] OVERRIDDEN: 0.0009720004641888315 -> 3.000e-04 (held-out/frozen-set value)
+  HL    sigma_em[Sr92    ] OVERRIDDEN: none -> 5.000e-03 (held-out/frozen-set value)
+  HL    sigma_em[Sr96    ] OVERRIDDEN: none -> 1.800e-03 (held-out/frozen-set value)
+  HL    sigma_em[Th236   ] OVERRIDDEN: none -> 1.800e-03 (held-out/frozen-set value)
+  HL    sigma_em[Ti58    ] OVERRIDDEN: none -> 2.100e-03 (held-out/frozen-set value)
+  HL    sigma_em[U242    ] OVERRIDDEN: none -> 9.000e-04 (held-out/frozen-set value)
+  HL    sigma_em[Xe142   ] OVERRIDDEN: none -> 8.900e-03 (held-out/frozen-set value)
+  HL    sigma_em[Yb180   ] OVERRIDDEN: none -> 6.000e-04 (held-out/frozen-set value)
+  HL    sigma_em[Zn74    ] OVERRIDDEN: none -> 3.600e-03 (held-out/frozen-set value)
+  HL    sigma_em[Zn78    ] OVERRIDDEN: none -> 2.600e-03 (held-out/frozen-set value)
+  HL    sigma_em[Zn82    ] OVERRIDDEN: 0.0032165967804992112 -> 1.800e-03 (held-out/frozen-set value)
+  HL    sigma_em[Zr100   ] OVERRIDDEN: none -> 2.900e-03 (held-out/frozen-set value)
+  sigma_em loaded: HL=40/10, GT=6/6
+sigma_Q from file /mnt/research/nuclear-theory/Saito/pnfam-emulator-calibration/calibration/runs/../../data/errors/sigma_q_HFB1.dat: Ar48=0.1073 Ba148=0.2248 Cd126=0.2272 Cr60=0.2379 Kr92=0.2016 Ni72=0.2307 Ru114=0.2304 Sr102=0.1349 Zn82=0.1086 Sn134=0.1716
+Prior: [domain] vpair ~ TruncatedNormal(mu=-247.4, sigma=200) on [-360.0, 0.0] x tanh^2((V0 - -360.0)/10.0); cs0 ~ Uniform[50.0, 250.0]
+Sampling with smc...
+                                                                                
+  Progress               Stage   Beta     Sampling Speed   Elapsed   Remaining  
+ ────────────────────────────────────────────────────────────────────────────── 
+  ━━━━━━━━━━━━━━━━━━━━   4       1.0000   4.74 s/stage     0:00:03   0:00:00    
+  ━━━━━━━━━━━━━━━━━━━━   4       1.0000   6.45 s/stage     0:00:05   0:00:00    
+  ━━━━━━━━━━━━━━━━━━━━   4       1.0000   6.50 s/stage     0:00:05   0:00:00    
+  ━━━━━━━━━━━━━━━━━━━━   4       1.0000   6.29 s/stage     0:00:05   0:00:00    
+                                                                                
+NetCDF save: dropped object-dtype variables:
+  sample_stats/log_marginal_likelihood
+  sample_stats/beta
+  sample_stats/accept_rate
+Trace saved: /mnt/ufs18/rs/nuclear-theory/Saito/pnfam-emulator-calibration/results/HFB1/bayes_t4gtt4_sthe1_domw10_q_A_HFB1_sem21001/centroid/trace.nc
+                 mean      sd   hdi_3%  ...  ess_bulk  ess_tail  r_hat
+vpair        -257.463  76.759 -352.723  ...    8250.0    7627.0    1.0
+cs0           107.380  12.859   81.623  ...    7444.0    7887.0    1.0
+sigma_hl_the    0.513   0.208    0.165  ...    7823.0    7649.0    1.0
+sigma_gt_the    1.002   0.492    0.186  ...    6696.0    5575.0    1.0
+
+[4 rows x 9 columns]

@@ -1,0 +1,5 @@
+source_fold=/mnt/home/saitoyu1/SMLR/cv/SKOP/centroid/Ge76/full/fold_3
+best_val_cost=2.517970e-03
+source_meta=/mnt/home/saitoyu1/SMLR/cv/SKOP/centroid/Ge76/full/fold_3/seed_3044/meta.txt
+train_set_source=train_set.txt
+n_train=80

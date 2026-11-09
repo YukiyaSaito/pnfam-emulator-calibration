@@ -1,0 +1,8 @@
+batch=30201
+functional=HFB1
+nucleus=Ce184
+k=20
+seed=20261017
+trace=../results/HFB1/bayes_t4gtt4_sthe1_domw10_q_POOL40_HFB1_gtall_HFB1_sem21001/centroid/trace.nc
+design=posterior draws, stratified in vpair (one draw per equal-probability slice)
+purpose=direct pnFAM prediction; local-surface fit + full-posterior propagation (predict_from_draws.py); NEVER merged into training

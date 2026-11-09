@@ -1,0 +1,9 @@
+# outputs of reruns (the committed inputs live under data/ and paper/data/)
+results/
+paper/figs/*.log
+design/.check/
+__pycache__/
+*.pyc
+.figtest*
+*.log
+!paper/data/*.txt

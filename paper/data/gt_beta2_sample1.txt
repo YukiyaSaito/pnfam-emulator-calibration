@@ -1,0 +1,10 @@
+# HFB ground-state quadrupole deformation (Def column of meta/logfile_master.dat) of the GT nuclei, sample_1 (V0=-250, C1s=125) GT run, per functional. Extracted 2026-10-13 from <F>/outputs/GT/<nuc>_sample_1_final.tar.gz on /mnt/gs21/scratch.
+# nucleus SKOP SLY4 HFB1 (HFB_Conv flags follow)
+Ca48 0.000000 -0.000000 0.000000  #conv: Yes Yes Yes
+Ge76 0.136135 -0.000000 0.164012  #conv: Yes Yes Yes
+Zr90 -0.000000 -0.000000 -0.000000  #conv: Yes Yes Yes
+Sn112 -0.000000 0.000498 0.000000  #conv: Yes Yes Yes
+Sn132 -0.000000 -0.000243 -0.000000  #conv: Yes Yes Yes
+Te130 -0.000000 0.000720 -0.000000  #conv: Yes Yes Yes
+Nd150 0.313201 0.243391 0.263547  #conv: Yes Yes Yes
+Pb208 -0.000539 0.000000 0.000000  #conv: Yes Yes Yes

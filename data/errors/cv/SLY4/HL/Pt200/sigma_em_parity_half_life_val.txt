@@ -1,0 +1,23 @@
+# CV pooled sigma_em summary
+# base_dir:    /mnt/home/saitoyu1/SMLR/cv/SLY4/HL/Pt200
+# parity_file: parity_half_life_val.txt
+# folds:       10
+
+[half_life]
+N=74
+bias=-1.809765e+02
+rmse=3.183412e+03
+sigma_em=3.178264e+03
+# per-fold (fold, N, bias, rmse):
+  fold_0  N=15  bias=-7.847185e+01  rmse=6.564421e+02
+  fold_1  N=15  bias=-1.531413e+01  rmse=6.298859e+03
+  fold_2  N=15  bias=-5.231954e+02  rmse=1.311369e+03
+  fold_3  N=15  bias=-3.930871e+02  rmse=2.603605e+03
+  fold_4  N=14  bias=1.256262e+02  rmse=1.220350e+03
+# heteroscedastic (bin, true_lo, true_hi, N, bias, sigma):
+  bin=0  [6.504045e+03, 6.947937e+04]  N=15  bias=3.399228e+01  sigma=3.225581e+02
+  bin=1  [6.947937e+04, 1.762486e+05]  N=15  bias=2.968398e+02  sigma=9.959268e+02
+  bin=2  [1.762486e+05, 3.221394e+05]  N=14  bias=-6.531596e+02  sigma=2.074975e+03
+  bin=3  [3.221394e+05, 7.102011e+05]  N=15  bias=-5.167223e+02  sigma=1.716329e+03
+  bin=4  [7.102011e+05, 1.288922e+06]  N=15  bias=-9.731163e+01  sigma=6.416452e+03
+

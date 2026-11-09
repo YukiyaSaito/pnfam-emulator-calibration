@@ -1,0 +1,23 @@
+# CV pooled sigma_em summary
+# base_dir:    /mnt/home/saitoyu1/SMLR/cv/SKOP/HL/Sr96
+# parity_file: parity_half_life_val.txt
+# folds:       10
+
+[half_life]
+N=60
+bias=-2.080174e-03
+rmse=3.763037e-02
+sigma_em=3.757283e-02
+# per-fold (fold, N, bias, rmse):
+  fold_0  N=12  bias=-7.196021e-03  rmse=2.282819e-02
+  fold_1  N=12  bias=-2.755321e-02  rmse=6.269928e-02
+  fold_2  N=12  bias=1.438564e-02  rmse=3.236862e-02
+  fold_3  N=12  bias=6.107534e-03  rmse=3.821787e-02
+  fold_4  N=12  bias=3.855198e-03  rmse=1.093460e-02
+# heteroscedastic (bin, true_lo, true_hi, N, bias, sigma):
+  bin=0  [6.636049e-01, 2.527147e+00]  N=12  bias=-1.932181e-03  sigma=7.261376e-03
+  bin=1  [2.527147e+00, 3.892514e+00]  N=12  bias=-3.540021e-03  sigma=1.262812e-02
+  bin=2  [3.892514e+00, 7.555775e+00]  N=12  bias=-6.519624e-03  sigma=1.751186e-02
+  bin=3  [7.555775e+00, 1.313867e+01]  N=12  bias=9.718247e-03  sigma=2.385470e-02
+  bin=4  [1.313867e+01, 2.357678e+01]  N=12  bias=-8.127288e-03  sigma=7.598058e-02
+

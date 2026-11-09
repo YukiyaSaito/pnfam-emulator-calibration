@@ -1,0 +1,43 @@
+# certified sigma_em [log10 s] from frozen batch 21001, SLY4; trace ../results/SLY4/bayes_t4gtt4_sthe1_domw10_q_POOL40_SLY4_gtall_SLY4/centroid
+# rule: plain RMS incl. bias, or posterior-weighted RMS if >1.3x plain
+# feed to bayes_mcmc.py --sigma-em-file <this file>
+Ar48=0.0006
+Ba148=0.0009
+Cd126=0.0013
+Cd132=0.0008
+Ce152=0.0022
+Cr60=0.0011
+Er174=0.0008
+Fe66=0.0008
+Gd166=0.0015
+Hg208=0.0006
+Kr92=0.0009
+Kr96=0.0006
+Mo108=0.0007
+Nd156=0.0009
+Ni72=0.0040
+Pd114=0.0018
+Pd120=0.0009
+Pt200=0.0012
+Pt204=0.0003
+Ra234=0.0007
+Rn226=0.0008
+Rn228=0.0011
+Ru114=0.0008
+Se88=0.0006
+Sm156=0.0019
+Sm162=0.0007
+Sn134=0.0006
+Sr102=0.0006
+Sr92=0.0013
+Sr96=0.0021
+Th236=0.0007
+Ti52=0.0075
+Ti58=0.0009
+U242=0.0004
+Xe142=0.0009
+Yb180=0.0010
+Zn74=0.0047
+Zn78=0.0020
+Zn82=0.0008
+Zr100=0.0008

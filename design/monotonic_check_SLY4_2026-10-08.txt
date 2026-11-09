@@ -1,0 +1,43 @@
+nuc       n  R2_lin  R2_mono    gap  rho_vp  rho_cs   interpretation
+Te134    14    0.02     0.08  +0.06   -0.07   -0.27   genuinely noisy / weak
+Ti52     74    0.56     0.87  +0.31   +0.73   +0.59   monotonic-nonlinear (reliable, curved)
+Sn134    74    0.62     0.85  +0.23   +0.90   -0.18   monotonic-nonlinear (reliable, curved)
+Zn82     74    0.89     0.92  +0.03   +0.50   +0.82   roughly linear
+Cr56     10    0.89     0.82  -0.07   +0.76   +0.02   roughly linear
+Ar48     74    0.89     0.89  +0.00   +0.63   +0.72   roughly linear
+Sr92     74    0.90     0.96  +0.06   +0.91   +0.37   roughly linear
+Rn226    74    0.92     0.95  +0.03   +0.58   +0.79   roughly linear
+Hg208    74    0.92     0.95  +0.03   +0.56   +0.81   roughly linear
+Cd132    74    0.92     0.95  +0.02   +0.68   +0.71   roughly linear
+U242     74    0.93     0.95  +0.02   +0.52   +0.83   roughly linear
+Rn228    74    0.93     0.96  +0.02   +0.49   +0.85   roughly linear
+Cr60     74    0.93     0.93  -0.00   +0.80   +0.56   roughly linear
+Pd114    74    0.94     0.94  -0.00   +0.75   +0.63   roughly linear
+Pt200    74    0.94     0.95  +0.01   +0.78   +0.59   roughly linear
+Sr96     74    0.94     0.93  -0.01   +0.67   +0.70   roughly linear
+Pt204    74    0.94     0.96  +0.02   +0.52   +0.84   roughly linear
+Zr100    74    0.94     0.93  -0.01   +0.73   +0.65   roughly linear
+Se88     74    0.94     0.93  -0.01   +0.67   +0.70   roughly linear
+Kr92     74    0.94     0.93  -0.01   +0.69   +0.68   roughly linear
+Xe142    74    0.94     0.95  +0.00   +0.48   +0.85   roughly linear
+Zn78     74    0.94     0.96  +0.02   +0.36   +0.92   roughly linear
+Th236    74    0.95     0.95  +0.01   +0.53   +0.83   roughly linear
+Sm156    74    0.95     0.94  -0.00   +0.58   +0.79   roughly linear
+Ra234    74    0.95     0.96  +0.02   +0.45   +0.88   roughly linear
+Ti58     74    0.95     0.94  -0.02   +0.73   +0.65   roughly linear
+Yb180    74    0.95     0.98  +0.02   +0.26   +0.96   roughly linear
+Gd166    74    0.96     0.96  +0.00   +0.44   +0.88   roughly linear
+Fe66     74    0.96     0.95  -0.01   +0.76   +0.61   roughly linear
+Mo108    74    0.96     0.96  -0.00   +0.46   +0.87   roughly linear
+Kr96     74    0.96     0.96  -0.01   +0.46   +0.87   roughly linear
+Zn74     73    0.96     0.96  -0.01   +0.84   +0.49   roughly linear
+Ba148    74    0.96     0.96  +0.00   +0.41   +0.90   roughly linear
+Er174    74    0.96     0.96  -0.01   +0.48   +0.86   roughly linear
+Nd156    74    0.96     0.96  -0.00   +0.44   +0.88   roughly linear
+Ce152    74    0.96     0.96  -0.00   +0.44   +0.88   roughly linear
+Ni72     74    0.97     1.00  +0.03   +0.03   +1.00   roughly linear
+Cd126    74    0.97     0.96  -0.01   +0.77   +0.62   roughly linear
+Sm162    74    0.97     0.97  +0.01   +0.35   +0.93   roughly linear
+Sr102    74    0.97     0.97  +0.00   +0.32   +0.94   roughly linear
+Ru114    74    0.97     0.96  -0.01   +0.52   +0.84   roughly linear
+Pd120    74    0.97     0.95  -0.02   +0.62   +0.77   roughly linear

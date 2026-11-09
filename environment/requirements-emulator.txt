@@ -1,0 +1,6 @@
+# Environment for training the emulators (emulator/). The committed emulators were trained with
+# TensorFlow 2.19-2.20 on CPU; numpy >= 2 and scipy are needed by helper.py.
+tensorflow>=2.19,<2.21
+numpy>=2.0
+scipy>=1.14
+matplotlib>=3.8

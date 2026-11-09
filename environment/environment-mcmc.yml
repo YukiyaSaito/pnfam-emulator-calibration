@@ -1,0 +1,16 @@
+# Environment for the Bayesian calibration (calibration/bayes_mcmc.py, run_bayes_mcmc.sh).
+# The committed posteriors were sampled with PyMC's SMC sampler under these versions.
+name: pnfam-calib-mcmc
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - numpy=2.3
+  - scipy=1.16
+  - pymc=5.28
+  - pytensor=2.38
+  - arviz=0.23
+  - xarray=2026.2
+  - pandas=3.0
+  - matplotlib=3.10
+  - seaborn=0.13
+  - netcdf4

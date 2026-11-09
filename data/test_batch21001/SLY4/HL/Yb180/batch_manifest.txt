@@ -1,0 +1,18 @@
+batch=21001
+date=2026-10-13
+seed=20261013
+functional=SLY4
+nucleus=Yb180
+hl_set=POOL40_SLY4
+in_A8_SLY4V7=False
+n_points=40
+n_frozen_val=40
+halfwidth_unit=half the central 68% width (16th-84th pct); box = median +/- 3 halfwidths, union over enclosed runs, clipped to prior
+box_single=V0[-450.000,-64.860] C1s[66.025,124.101] n=40 ids=21001-21040 encloses=POOL40 t4+POOL40 N+A8_SLY4V7 t4+A8_SLY4V7 N nuclei=POOL40_SLY4
+union_unclipped=V0[-550.079,-64.860] C1s[66.025,124.101] clipped=V0 lo prior_support=V0[-450,0] C1s[50,250]
+trace_POOL40_t4=SLY4/bayes_t4gtt4_sthe1_domw10_q_POOL40_SLY4_gtall_SLY4/centroid/trace.nc mass_in_box=0.9836
+trace_POOL40_N=SLY4/bayes_norm_sthe1_domw10_q_POOL40_SLY4_gtall_SLY4/centroid/trace.nc mass_in_box=0.9966
+trace_A8_SLY4V7_t4=SLY4/bayes_t4gtt4_sthe1_domw10_q_A8_SLY4V7_gtall_SLY4/centroid/trace.nc mass_in_box=0.9876
+trace_A8_SLY4V7_N=SLY4/bayes_norm_sthe1_domw10_q_A8_SLY4V7_gtall_SLY4/centroid/trace.nc mass_in_box=0.9901
+generator=scipy.stats.qmc.LatinHypercube(d=2), uniform over box (calibration/gen_frozen_batch_v7.py)
+pnfam_settings=production sample-1 run_pynfam_rates_Z*_N*_sample1.py + sbatch (Q-corrected), only sample label / vpair_t0 / override_cs0 substituted

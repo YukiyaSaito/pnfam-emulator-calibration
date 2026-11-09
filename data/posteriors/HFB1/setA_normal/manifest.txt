@@ -1,0 +1,27 @@
+functional=HFB1
+gt_mode=centroid
+sampler=smc
+draws=2000
+use_sigma_em=True
+sigma_em_convention=rms_incl_bias
+hl_emu_src={}
+sigma_em_override={'Ar48': 0.0006, 'Ba148': 0.0007, 'Cd126': 0.0011, 'Cd132': 0.0012, 'Ce152': 0.0017, 'Cr56': 0.0047, 'Cr60': 0.0066, 'Er174': 0.001, 'Fe66': 0.0013, 'Gd166': 0.0006, 'Hg208': 0.0007, 'Kr92': 0.0015, 'Kr96': 0.002, 'Mo108': 0.0009, 'Nd156': 0.0026, 'Ni72': 0.0004, 'Pd114': 0.0045, 'Pd120': 0.0021, 'Pt200': 0.0016, 'Pt204': 0.0005, 'Ra234': 0.001, 'Rn226': 0.003, 'Rn228': 0.0014, 'Ru114': 0.0007, 'Se88': 0.0008, 'Sm156': 0.0013, 'Sm162': 0.0013, 'Sn134': 0.0018, 'Sr102': 0.0003, 'Sr92': 0.005, 'Sr96': 0.0018, 'Th236': 0.0018, 'Ti58': 0.0021, 'U242': 0.0009, 'Xe142': 0.0089, 'Yb180': 0.0006, 'Zn74': 0.0036, 'Zn78': 0.0026, 'Zn82': 0.0018, 'Zr100': 0.0029}
+sigma_em_file=/mnt/home/saitoyu1/SMLR/calibration/analysis/frozen/sigma_em_frozen_HFB1_batch21001.txt
+sigma_em_hl={'Ar48': 0.0006, 'Ba148': 0.0007, 'Cd126': 0.0011, 'Cr60': 0.0066, 'Kr92': 0.0015, 'Ni72': 0.0004, 'Ru114': 0.0007, 'Sr102': 0.0003, 'Zn82': 0.0018, 'Sn134': 0.0018, 'Cd132': 0.0012, 'Ce152': 0.0017, 'Cr56': 0.0047, 'Er174': 0.001, 'Fe66': 0.0013, 'Gd166': 0.0006, 'Hg208': 0.0007, 'Kr96': 0.002, 'Mo108': 0.0009, 'Nd156': 0.0026, 'Pd114': 0.0045, 'Pd120': 0.0021, 'Pt200': 0.0016, 'Pt204': 0.0005, 'Ra234': 0.001, 'Rn226': 0.003, 'Rn228': 0.0014, 'Se88': 0.0008, 'Sm156': 0.0013, 'Sm162': 0.0013, 'Sr92': 0.005, 'Sr96': 0.0018, 'Th236': 0.0018, 'Ti58': 0.0021, 'U242': 0.0009, 'Xe142': 0.0089, 'Yb180': 0.0006, 'Zn74': 0.0036, 'Zn78': 0.0026, 'Zr100': 0.0029}
+sigma_q_file=/mnt/home/saitoyu1/SMLR/calibration/analysis/sigma_q_HFB1.dat
+sigma_q_hl={'Ar48': 0.1073, 'Ba148': 0.2248, 'Cd126': 0.2272, 'Cr60': 0.2379, 'Kr92': 0.2016, 'Ni72': 0.2307, 'Ru114': 0.2304, 'Sr102': 0.1349, 'Zn82': 0.1086, 'Sn134': 0.1716}
+sigma_em_gt={'Pb_208': 0.0034938798322034733, 'Ca_48': 0.006279949541639982, 'Ge_76': 0.01860937856810297, 'Te_130': 0.01021991898300029, 'Sn_112': 0.011768896968070576, 'Zr_90': 0.025875249998473463}
+per_nucleus_sigma=False
+hl_likelihood=normal
+hl_nu=4.0
+gt_likelihood=normal
+gt_nu=4.0
+sigma_the_prior=HalfStudentT(nu=4, scale=sigma_the_scale) on sigma_hl_the [log10 s] and sigma_gt_the [MeV]
+sigma_the_scale=1.0
+prior_kind=domain
+prior_spec={'kind': 'domain', 'vpair': {'mu': -247.4, 'sigma': 200.0, 'lower': -360.0, 'upper': 0.0, 'taper_w': 10.0}, 'cs0': {'dist': 'flat', 'mu': None, 'sigma': None, 'lower': 50.0, 'upper': 250.0}}
+prior_desc=[domain] vpair ~ TruncatedNormal(mu=-247.4, sigma=200) on [-360.0, 0.0] x tanh^2((V0 - -360.0)/10.0); cs0 ~ Uniform[50.0, 250.0]
+hl_set=A
+gt_set=A
+hl_nuclei_order=['Ar48', 'Ba148', 'Cd126', 'Cr60', 'Kr92', 'Ni72', 'Ru114', 'Sr102', 'Zn82', 'Sn134']
+gt_nuclei_order=['Pb_208', 'Ca_48', 'Ge_76', 'Te_130', 'Sn_112', 'Zr_90']
