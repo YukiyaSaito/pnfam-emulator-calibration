@@ -3,8 +3,11 @@
 Code, trained emulators, and posterior samples for the Bayesian calibration of the isovector
 pairing strength V0 and the spin-isospin coupling C1s of three Skyrme functionals (SkO', SLy4,
 UNEDF1-HFB) to measured beta-decay half-lives and Gamow-Teller (GT) resonance energies, using
-emulators of the proton-neutron finite-amplitude method (pnFAM). Companion to the paper
-[reference and arXiv number to be added].
+emulators of the proton-neutron finite-amplitude method (pnFAM). Companion to
+
+Y. Saito, A. Ravlić, and W. Nazarewicz, "Emulator-Enabled Calibration and Uncertainty Quantification of
+beta-decay Calculations within the Energy Density Functional Theory", submitted to Phys. Rev. C (2026)
+[arXiv identifier to be added].
 
 ## Layout
 
@@ -40,4 +43,7 @@ pnfam-emulator-calibration-data [Zenodo DOI to be added]; nothing in steps 1-4 n
 
 ## Citation
 
-See CITATION.cff.
+See CITATION.cff. The emulator model (emulator/helper.py) is a modified version of SMLR, Surrogate Models for
+Linear Response, by L. Jin, A. Ravlić, P. Giuliani, K. Godbey, and W. Nazarewicz, https://github.com/ascsn/SMLR.
+The pnFAM and pynfam codes that produced the training data are those of M. T. Mustonen, E. M. Ney, J. Engel and
+collaborators and are not part of this repository.

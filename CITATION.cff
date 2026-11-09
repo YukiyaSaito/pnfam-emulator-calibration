@@ -1,21 +1,37 @@
 cff-version: 1.2.0
 message: "If you use this code or data, please cite the paper below."
-title: "pnfam-emulator-calibration"
+title: "pnfam-emulator-calibration: emulator-enabled Bayesian calibration of beta-decay calculations"
 type: software
 authors:
   - family-names: Saito
     given-names: Yukiya
-    # orcid: https://orcid.org/0000-0000-0000-0000
-  # add co-authors
+    orcid: https://orcid.org/0000-0003-1320-8903
+    affiliation: "Facility for Rare Isotope Beams, Michigan State University"
+  - family-names: Ravlić
+    given-names: Ante
+    orcid: https://orcid.org/0000-0001-9639-5382
+    affiliation: "Facility for Rare Isotope Beams, Michigan State University"
+  - family-names: Nazarewicz
+    given-names: Witold
+    orcid: https://orcid.org/0000-0002-8084-7425
+    affiliation: "Facility for Rare Isotope Beams, Michigan State University"
+repository-code: https://github.com/YukiyaSaito/pnfam-emulator-calibration
 version: 1.0.0
 date-released: 2026-11-09
 license: TBD
 preferred-citation:
   type: article
-  title: "[paper title]"
+  title: "Emulator-Enabled Calibration and Uncertainty Quantification of beta-decay Calculations within the Energy Density Functional Theory"
   authors:
     - family-names: Saito
       given-names: Yukiya
+      orcid: https://orcid.org/0000-0003-1320-8903
+    - family-names: Ravlić
+      given-names: Ante
+      orcid: https://orcid.org/0000-0001-9639-5382
+    - family-names: Nazarewicz
+      given-names: Witold
+      orcid: https://orcid.org/0000-0002-8084-7425
   journal: "Physical Review C"
   year: 2026
-  # doi / arXiv to be added
+  notes: "submitted; arXiv identifier and DOI to be added"

@@ -18,4 +18,5 @@ Figures and tables of the paper.
 `scripts/make_tables.sh` writes all tables; each figure script writes `figs/<name>.{pdf,png}`.
 `paper/data/literature/` holds published half-life tables used for comparison: data_Evan.txt (Ney et al. 2020, SkO'),
 data_FRDM.txt (FRDM), supplementary_halflives.txt (Ney et al.), half-lives.dat (RQRPA/RQTBA), data_DDPC1.txt
-(DD-PC1, Ravlic et al.).
+(DD-PC1; A. Ravlić, Y. Saito, W. Nazarewicz, Phys. Rev. C 113, 045802 (2026), data repository
+https://github.com/YukiyaSaito/beta_decay_RSN_2025, CC-BY-4.0).
