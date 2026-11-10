@@ -31,7 +31,7 @@ Fisher conventions follow fisher_matrix_report.py:
         (a = (vpair_t0+250)/250 over (-500,0), b = (cs0-125)/125 over (0,250)),
   F_i = g_i g_i^T / sigma_tot,i^2,
   HL: sigma_tot^2 = sigma_exp_log10^2 + sigma_em^2 + SIGMA_THE_HL^2
-  GT: sigma_tot^2 = sigma_MeV^2 + SIGMA_THE_GT^2
+  GT: sigma_tot^2 = sigma_MeV^2 + sigma_em_MeV^2 + SIGMA_THE_GT^2   (sigma_em_MeV: CV emulator error, 2026-11-10)
 GT centroids carry ~no vpair dependence (pR2_vp <= 0.02), so the GT base is
 kept at global slopes in both slope modes.
 
@@ -279,7 +279,9 @@ def gt_base(gt_set=GT_SET):
     for nuc in gt_set:
         r = rows[nuc]
         g = np.array([fnum(r, "b_vp"), fnum(r, "b_cs")])
-        s2 = fnum(r, "sigma_MeV") ** 2 + SIGMA_THE_GT ** 2
+        sem = fnum(r, "sigma_em_MeV")          # CV emulator error of the centroid [MeV]; same decomposition as the likelihood
+        sem = sem if math.isfinite(sem) else 0.0
+        s2 = fnum(r, "sigma_MeV") ** 2 + sem ** 2 + SIGMA_THE_GT ** 2
         B += np.outer(g, g) / s2
     return B
 
@@ -524,7 +526,7 @@ def main():
     txt.append(f"Constrained exhaustive calibration-set search -- "
                f"{_FDEF['title']} 2D (vpair, cs0)")
     txt.append(f"date {_FDEF['date']} | sigma_the_HL={SIGMA_THE_HL} "
-               f"sigma_the_GT={SIGMA_THE_GT}")
+               f"sigma_the_GT={SIGMA_THE_GT} | GT variance includes the CV emulator error sigma_em_MeV")
     txt.append(f"GT base (fixed {'+'.join(gt_set)}): F_vp={B[0,0]:.3f} "
                f"F_cs={B[1,1]:.3f} F_x={B[0,1]:.3f}")
     txt.append(f"localized-slope window: vpair in [{loc_win[0]:.0f}, {loc_win[1]:.0f}]")

@@ -1,0 +1,19 @@
+=== SKOP GT-centroid nuclei-selection table ===
+centroid sensitivity b = d(centroid[MeV]) per half-box; F = b^2/sigma_exp^2 (sigma from GT_E_ERR)
+nuc       n    R2   b_vp   b_cs  pR2vp  pR2cs    cbar   cexp   sig    sem    F_vp    F_cs
+Ca48    100  0.19  -0.15   1.15   0.00   0.19   11.19  10.00  0.50  0.012       0       5
+Ge76    100  0.98   0.42   3.27   0.02   0.96   11.76  11.13  0.50  0.015       1      43
+Nd150   100  0.97   0.18   4.53   0.00   0.97   15.57  15.25  0.50  0.009       0      82
+Pb208   100  0.98  -0.03   5.83   0.00   0.98   15.33  15.60  0.20  0.005       0     849
+Sn112   100  0.99   0.17   2.67   0.00   0.99    8.25   8.94  0.25  0.010       0     114
+Sn132   100  0.96  -0.01   6.25   0.00   0.96   16.67  16.30  0.50  0.004       0     156
+Te130   100  0.99   0.37   4.78   0.01   0.98   13.51  13.59  0.50  0.013       1      91
+Zr90    100  0.99   0.04   3.32   0.00   0.99   10.63   9.00  0.50  0.021       0      44
+
+[physics check] max |computed centroid - experimental GTR| across grid means = 1.6 MeV (calibration should close the model-data gap; a few MeV is expected, tens of MeV would signal a window/shift bug)
+
+--- Fisher conditioning in (vpair,cs0): HL-only vs GT-only vs combined ---
+HL SET_A          eig=[  8882. 241421.]  cond=27.2
+GT SET_A(7 nuc)   eig=[   1.7 1385.6]  cond=798.6
+HL + GT combined  eig=[  9309. 242381.]  cond=26.0
+HL(A+Ti52,Pt200)+GT combined  eig=[ 90385. 647219.]  cond=7.2

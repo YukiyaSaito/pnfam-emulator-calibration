@@ -7,3 +7,6 @@ __pycache__/
 .figtest*
 *.log
 !paper/data/*.txt
+
+# local backups of superseded outputs (not part of the record)
+.pre_gtsem/

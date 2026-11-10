@@ -9,7 +9,10 @@ and regress it on the two scaled parameters:
   centroid_Ex = sum(E_x * S) / sum(S)   over E_x in the nucleus GT window
   E_x = E_math - shift  (config.get_gt_shift);  window from config.get_gt_window
 Sensitivity b_θ = d centroid[MeV] / d(scaled param); Fisher F_θ = b_θ^2/sigma^2
-with sigma = experimental GT centroid error (config.GT_E_ERR, MeV).
+with sigma = experimental GT centroid error (config.GT_E_ERR, MeV). The column
+sigma_em_MeV (added 2026-11-10) is the cross-validation emulator error of the
+centroid, pooled over the folds as in bayes_mcmc.py; the set search and Fig. 4
+add it in quadrature to the GT variance.
 
 The 2x2 Fisher matrix lives in parameter space, so HL (log10 T) and GT (MeV)
 contributions are ADDITIVE information about (vpair,cs0); we report HL-only,
@@ -41,9 +44,28 @@ _ap.add_argument("--out-dir", default=os.path.dirname(os.path.abspath(__file__))
 _args = _ap.parse_args()
 FUNCTIONAL = _args.functional
 GTROOT = os.path.join(RP.TRAINING, FUNCTIONAL, "GT")   # <nuc>/full/sample_<i>.dat strength functions
+CVROOT_FMT = os.path.join(RP.CV, FUNCTIONAL, "GT", "{nuc}", "full")   # fold_*/parity_centroid_val.txt
 OUT = _args.out_dir
 STEM = f"{FUNCTIONAL.lower()}_gt_fisher"
 LN10 = math.log(10.0)
+
+
+def gt_sigma_em(nuc):
+    """Cross-validation emulator error of the GT centroid [MeV]: RMS of (pred - true) including the
+    bias, pooled over the fold_*/parity_centroid_val.txt files, exactly as bayes_mcmc.load_sigma_em_gt.
+    Returns nan if no parity files exist. 2026-11-10: written to the sigma_em_MeV column so that the
+    set search and Fig. 4 add it in quadrature to the GT variance (same decomposition as the likelihood)."""
+    import glob
+    base = CVROOT_FMT.format(nuc=nuc)
+    pred, true = [], []
+    for pf in sorted(glob.glob(os.path.join(base, "fold_*", "parity_centroid_val.txt"))):
+        d = np.loadtxt(pf)
+        d = d[None, :] if d.ndim == 1 else d
+        true.append(d[:, 1]); pred.append(d[:, 2])
+    if not pred:
+        return float("nan")
+    r = np.concatenate(pred) - np.concatenate(true)
+    return float(np.sqrt(np.mean(r * r)))
 
 
 def read_params(path):
@@ -136,7 +158,7 @@ def main():
     p("centroid sensitivity b = d(centroid[MeV]) per half-box; "
       "F = b^2/sigma_exp^2 (sigma from GT_E_ERR)")
     p(f"{'nuc':7s}{'n':>4s}{'R2':>6s}{'b_vp':>7s}{'b_cs':>7s}{'pR2vp':>7s}{'pR2cs':>7s}"
-      f"{'cbar':>8s}{'cexp':>7s}{'sig':>6s}{'F_vp':>8s}{'F_cs':>8s}")
+      f"{'cbar':>8s}{'cexp':>7s}{'sig':>6s}{'sem':>7s}{'F_vp':>8s}{'F_cs':>8s}")
     gt_contribs = []
     for nuc in sorted(os.listdir(GTROOT)):
         if not os.path.isdir(os.path.join(GTROOT, nuc)):
@@ -147,11 +169,12 @@ def main():
         sig = config.GT_E_ERR.get(key, float("nan"))
         F_vp = (r["b_vp"] ** 2) / sig ** 2 if sig == sig else float("nan")
         F_cs = (r["b_cs"] ** 2) / sig ** 2 if sig == sig else float("nan")
-        r.update(nuc=nuc, cexp=cexp, sig=sig, F_vp=F_vp, F_cs=F_cs)
+        sem = gt_sigma_em(nuc)
+        r.update(nuc=nuc, cexp=cexp, sig=sig, sem=sem, F_vp=F_vp, F_cs=F_cs)
         rows.append(r)
         gt_contribs.append((np.array([r["b_vp"], r["b_cs"]]), sig))
         p(f"{nuc:7s}{r['n']:4d}{r['R2']:6.2f}{r['b_vp']:7.2f}{r['b_cs']:7.2f}"
-          f"{r['pR2_vp']:7.2f}{r['pR2_cs']:7.2f}{r['cbar']:8.2f}{cexp:7.2f}{sig:6.2f}"
+          f"{r['pR2_vp']:7.2f}{r['pR2_cs']:7.2f}{r['cbar']:8.2f}{cexp:7.2f}{sig:6.2f}{sem:7.3f}"
           f"{r['F_vp']:8.0f}{r['F_cs']:8.0f}")
 
     # physics sanity check
@@ -175,11 +198,11 @@ def main():
 
     with open(os.path.join(OUT, STEM + ".csv"), "w") as f:
         f.write("nucleus,n,R2,b_vp,b_cs,pR2_vp,pR2_cs,centroid_mean,centroid_exp,"
-                "sigma_MeV,F_vp,F_cs,se_vp,se_cs,sigma_resid\n")
+                "sigma_MeV,sigma_em_MeV,F_vp,F_cs,se_vp,se_cs,sigma_resid\n")
         for r in rows:
             f.write(f"{r['nuc']},{r['n']},{r['R2']:.4f},{r['b_vp']:.4f},{r['b_cs']:.4f},"
                     f"{r['pR2_vp']:.4f},{r['pR2_cs']:.4f},{r['cbar']:.4f},{r['cexp']:.4f},"
-                    f"{r['sig']:.4f},{r['F_vp']:.1f},{r['F_cs']:.1f},"
+                    f"{r['sig']:.4f},{r['sem']:.5f},{r['F_vp']:.1f},{r['F_cs']:.1f},"
                     f"{r['se_vp']:.5f},{r['se_cs']:.5f},{r['sresid']:.5f}\n")
     with open(os.path.join(OUT, STEM + ".txt"), "w") as f:
         f.write("\n".join(lines) + "\n")

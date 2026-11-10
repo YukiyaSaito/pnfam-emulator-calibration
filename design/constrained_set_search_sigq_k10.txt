@@ -1,7 +1,7 @@
 ==============================================================================
 Constrained exhaustive calibration-set search -- SKO' 2D (vpair, cs0)
-date 2026-10-12 | sigma_the_HL=0.464 sigma_the_GT=1.197 | TEST: sigma_Q,i^2 added to HL variance (sigma_q_SKOP.dat)
-GT base (fixed Pb208+Sn132+Te130+Zr90+Ge76+Sn112+Nd150+Ca48): F_vp=0.242 F_cs=90.517 F_x=2.507
+date 2026-10-12 | sigma_the_HL=0.464 sigma_the_GT=1.197 | GT variance includes the CV emulator error sigma_em_MeV
+GT base (fixed Pb208+Sn132+Te130+Zr90+Ge76+Sn112+Nd150+Ca48): F_vp=0.242 F_cs=90.512 F_x=2.506
 localized-slope window: vpair in [-325, -199]
 raw pool = POOL40_SKOP: 40 (dropped from the fisher CSV: Pt200, Ti52)
 screened pool: 40 (dropped: )
@@ -58,151 +58,151 @@ REFERENCE SETS (fixed candidates, same Fisher conventions)
   A-10 [global] lam_min=7.148 cond=14.8 sig_vp=93.0 sig_cs=13.2   {Ar48, Ba148, Cd126, Cr60, Kr92, Ni72, Ru114, Sn134, Sr102, Zn82}
        cells missed (over schemes requiring them): mass_heavy, q_low, shell_N126; mass_heavy, q_low, shell_N126, joint_hdl
        observed MCMC: n/a
-  A-10 [   loc] lam_min=16.800 cond=6.4 sig_vp=60.2 sig_cs=13.1   {Ar48, Ba148, Cd126, Cr60, Kr92, Ni72, Ru114, Sn134, Sr102, Zn82}
-  G8-8 [global] lam_min=14.906 cond=6.7 sig_vp=64.0 sig_cs=13.4   {Cr56, Cr60, Hg208, Pd114, Sm156, Sn134, Sr92, Zn74}
+  A-10 [   loc] lam_min=16.799 cond=6.4 sig_vp=60.2 sig_cs=13.1   {Ar48, Ba148, Cd126, Cr60, Kr92, Ni72, Ru114, Sn134, Sr102, Zn82}
+  G10-10 [global] lam_min=17.360 cond=6.1 sig_vp=59.0 sig_cs=13.4   {Cd126, Cr56, Cr60, Fe66, Hg208, Pd114, Sm156, Sr92, Zn74, Zr100}
        cells missed (over schemes requiring them): none -- covers every scheme
        observed MCMC: n/a
-  G8-8 [   loc] lam_min=29.701 cond=3.4 sig_vp=44.9 sig_cs=13.3   {Cr56, Cr60, Hg208, Pd114, Sm156, Sn134, Sr92, Zn74}
-  L8-8 [global] lam_min=14.906 cond=6.7 sig_vp=64.0 sig_cs=13.4   {Cr56, Cr60, Hg208, Pd114, Sm156, Sn134, Sr92, Zn74}
+  G10-10 [   loc] lam_min=34.057 cond=3.2 sig_vp=41.3 sig_cs=13.3   {Cd126, Cr56, Cr60, Fe66, Hg208, Pd114, Sm156, Sr92, Zn74, Zr100}
+  L10-10 [global] lam_min=17.347 cond=6.1 sig_vp=59.0 sig_cs=13.4   {Cd126, Cr56, Cr60, Fe66, Hg208, Pd114, Ra234, Sr92, Zn74, Zr100}
        cells missed (over schemes requiring them): none -- covers every scheme
        observed MCMC: n/a
-  L8-8 [   loc] lam_min=29.701 cond=3.4 sig_vp=44.9 sig_cs=13.3   {Cr56, Cr60, Hg208, Pd114, Sm156, Sn134, Sr92, Zn74}
+  L10-10 [   loc] lam_min=34.059 cond=3.2 sig_vp=41.3 sig_cs=13.3   {Cd126, Cr56, Cr60, Fe66, Hg208, Pd114, Ra234, Sr92, Zn74, Zr100}
   Full-40 [global] lam_min=21.313 cond=6.8 sig_vp=52.2 sig_cs=12.6   {Ar48, Ba148, Cd126, Cd132, Ce152, Cr56, Cr60, Er174, Fe66, Gd166, Hg208, Kr92, Kr96, Mo108, Nd156, Ni72, Pd114, Pd120, Pt204, Ra234, Rn226, Rn228, Ru114, Se88, Sm156, Sm162, Sn134, Sr102, Sr92, Sr96, Te134, Th236, Ti58, U242, Xe142, Yb180, Zn74, Zn78, Zn82, Zr100}
        cells missed (over schemes requiring them): none -- covers every scheme
        observed MCMC: n/a
-  Full-40 [   loc] lam_min=42.769 cond=3.7 sig_vp=34.8 sig_cs=12.7   {Ar48, Ba148, Cd126, Cd132, Ce152, Cr56, Cr60, Er174, Fe66, Gd166, Hg208, Kr92, Kr96, Mo108, Nd156, Ni72, Pd114, Pd120, Pt204, Ra234, Rn226, Rn228, Ru114, Se88, Sm156, Sm162, Sn134, Sr102, Sr92, Sr96, Te134, Th236, Ti58, U242, Xe142, Yb180, Zn74, Zn78, Zn82, Zr100}
+  Full-40 [   loc] lam_min=42.768 cond=3.7 sig_vp=34.8 sig_cs=12.7   {Ar48, Ba148, Cd126, Cd132, Ce152, Cr56, Cr60, Er174, Fe66, Gd166, Hg208, Kr92, Kr96, Mo108, Nd156, Ni72, Pd114, Pd120, Pt204, Ra234, Rn226, Rn228, Ru114, Se88, Sm156, Sm162, Sn134, Sr102, Sr92, Sr96, Te134, Th236, Ti58, U242, Xe142, Yb180, Zn74, Zn78, Zn82, Zr100}
 
 ------------------------------------------------------------------------------
 POOL=screened (40)  k=10  combos=847,660,528
   [global slopes]
     UNCON  lam=  18.078            {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Ti58}
-    Qbin-Dstrict-Xnone     lam=  18.042 price=0.998 feas=228,819,499  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+    Qbin-Dstrict-Xnone     lam=  18.041 price=0.998 feas=228,819,499  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
     Qbin-Dstrict-Xhdl      lam=  17.360 price=0.960 feas=180,779,560  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-    Qbin-Dstrict-Xff       lam=  18.042 price=0.998 feas=228,819,499  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+    Qbin-Dstrict-Xff       lam=  18.041 price=0.998 feas=228,819,499  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
     Qbin-Dstrict-Xboth     lam=  17.360 price=0.960 feas=180,779,560  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-    Qbin-Dlenient-Xnone    lam=  18.042 price=0.998 feas=229,556,980  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+    Qbin-Dlenient-Xnone    lam=  18.041 price=0.998 feas=229,556,980  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
     Qbin-Dlenient-Xhdl     lam=  17.360 price=0.960 feas=180,779,560  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-    Qbin-Dlenient-Xff      lam=  18.042 price=0.998 feas=229,556,980  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+    Qbin-Dlenient-Xff      lam=  18.041 price=0.998 feas=229,556,980  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
     Qbin-Dlenient-Xboth    lam=  17.360 price=0.960 feas=180,779,560  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-    Qbin-Dthree-Xnone      lam=  18.042 price=0.998 feas=217,186,745  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+    Qbin-Dthree-Xnone      lam=  18.041 price=0.998 feas=217,186,745  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
     Qbin-Dthree-Xhdl       lam=  17.360 price=0.960 feas=170,520,375  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-    Qbin-Dthree-Xff        lam=  18.042 price=0.998 feas=217,186,745  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+    Qbin-Dthree-Xff        lam=  18.041 price=0.998 feas=217,186,745  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
     Qbin-Dthree-Xboth      lam=  17.360 price=0.960 feas=170,520,375  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-    Qter-Dstrict-Xnone     lam=  18.042 price=0.998 feas=222,268,612  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+    Qter-Dstrict-Xnone     lam=  18.041 price=0.998 feas=222,268,612  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
     Qter-Dstrict-Xhdl      lam=  17.360 price=0.960 feas=174,752,701  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-    Qter-Dstrict-Xff       lam=  18.042 price=0.998 feas=222,268,612  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+    Qter-Dstrict-Xff       lam=  18.041 price=0.998 feas=222,268,612  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
     Qter-Dstrict-Xboth     lam=  17.360 price=0.960 feas=174,752,701  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-    Qter-Dlenient-Xnone    lam=  18.042 price=0.998 feas=222,972,278  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+    Qter-Dlenient-Xnone    lam=  18.041 price=0.998 feas=222,972,278  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
     Qter-Dlenient-Xhdl     lam=  17.360 price=0.960 feas=174,752,701  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-    Qter-Dlenient-Xff      lam=  18.042 price=0.998 feas=222,972,278  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+    Qter-Dlenient-Xff      lam=  18.041 price=0.998 feas=222,972,278  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
     Qter-Dlenient-Xboth    lam=  17.360 price=0.960 feas=174,752,701  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-    Qter-Dthree-Xnone      lam=  18.042 price=0.998 feas=211,060,484  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+    Qter-Dthree-Xnone      lam=  18.041 price=0.998 feas=211,060,484  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
     Qter-Dthree-Xhdl       lam=  17.360 price=0.960 feas=164,899,038  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-    Qter-Dthree-Xff        lam=  18.042 price=0.998 feas=211,060,484  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+    Qter-Dthree-Xff        lam=  18.041 price=0.998 feas=211,060,484  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
     Qter-Dthree-Xboth      lam=  17.360 price=0.960 feas=164,899,038  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
   [loc slopes]
     UNCON  lam=  35.617            {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Ti58}
-    Qbin-Dstrict-Xnone     lam=  35.429 price=0.995 feas=228,819,499  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
+    Qbin-Dstrict-Xnone     lam=  35.428 price=0.995 feas=228,819,499  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
     Qbin-Dstrict-Xhdl      lam=  34.059 price=0.956 feas=180,779,560  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-    Qbin-Dstrict-Xff       lam=  35.429 price=0.995 feas=228,819,499  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
+    Qbin-Dstrict-Xff       lam=  35.428 price=0.995 feas=228,819,499  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
     Qbin-Dstrict-Xboth     lam=  34.059 price=0.956 feas=180,779,560  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-    Qbin-Dlenient-Xnone    lam=  35.429 price=0.995 feas=229,556,980  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
+    Qbin-Dlenient-Xnone    lam=  35.428 price=0.995 feas=229,556,980  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
     Qbin-Dlenient-Xhdl     lam=  34.059 price=0.956 feas=180,779,560  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-    Qbin-Dlenient-Xff      lam=  35.429 price=0.995 feas=229,556,980  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
+    Qbin-Dlenient-Xff      lam=  35.428 price=0.995 feas=229,556,980  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
     Qbin-Dlenient-Xboth    lam=  34.059 price=0.956 feas=180,779,560  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-    Qbin-Dthree-Xnone      lam=  35.429 price=0.995 feas=217,186,745  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
+    Qbin-Dthree-Xnone      lam=  35.428 price=0.995 feas=217,186,745  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
     Qbin-Dthree-Xhdl       lam=  34.059 price=0.956 feas=170,520,375  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-    Qbin-Dthree-Xff        lam=  35.429 price=0.995 feas=217,186,745  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
+    Qbin-Dthree-Xff        lam=  35.428 price=0.995 feas=217,186,745  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
     Qbin-Dthree-Xboth      lam=  34.059 price=0.956 feas=170,520,375  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-    Qter-Dstrict-Xnone     lam=  35.429 price=0.995 feas=222,268,612  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
+    Qter-Dstrict-Xnone     lam=  35.428 price=0.995 feas=222,268,612  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
     Qter-Dstrict-Xhdl      lam=  34.059 price=0.956 feas=174,752,701  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-    Qter-Dstrict-Xff       lam=  35.429 price=0.995 feas=222,268,612  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
+    Qter-Dstrict-Xff       lam=  35.428 price=0.995 feas=222,268,612  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
     Qter-Dstrict-Xboth     lam=  34.059 price=0.956 feas=174,752,701  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-    Qter-Dlenient-Xnone    lam=  35.429 price=0.995 feas=222,972,278  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
+    Qter-Dlenient-Xnone    lam=  35.428 price=0.995 feas=222,972,278  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
     Qter-Dlenient-Xhdl     lam=  34.059 price=0.956 feas=174,752,701  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-    Qter-Dlenient-Xff      lam=  35.429 price=0.995 feas=222,972,278  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
+    Qter-Dlenient-Xff      lam=  35.428 price=0.995 feas=222,972,278  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
     Qter-Dlenient-Xboth    lam=  34.059 price=0.956 feas=174,752,701  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-    Qter-Dthree-Xnone      lam=  35.429 price=0.995 feas=211,060,484  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
+    Qter-Dthree-Xnone      lam=  35.428 price=0.995 feas=211,060,484  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
     Qter-Dthree-Xhdl       lam=  34.059 price=0.956 feas=164,899,038  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-    Qter-Dthree-Xff        lam=  35.429 price=0.995 feas=211,060,484  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
+    Qter-Dthree-Xff        lam=  35.428 price=0.995 feas=211,060,484  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
     Qter-Dthree-Xboth      lam=  34.059 price=0.956 feas=164,899,038  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
 
 ==============================================================================
 HEADLINE (screened, global slopes, k=10) -- top-3 per scheme
   UNCON                  #1 lam=  18.078  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Ti58}
-  UNCON                  #2 lam=  18.042  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+  UNCON                  #2 lam=  18.041  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
   UNCON                  #3 lam=  17.960  {Sr92, Zn74, Cr56, Pd114, Sr96, Cd126, Cr60, Zr100, Fe66, Ti58}
-  Qbin-Dstrict-Xnone     #1 lam=  18.042  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+  Qbin-Dstrict-Xnone     #1 lam=  18.041  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
   Qbin-Dstrict-Xnone     #2 lam=  17.887  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
   Qbin-Dstrict-Xnone     #3 lam=  17.768  {Sr92, Zn74, Cr56, Pd114, Sr96, Cd126, Cr60, Zr100, Fe66, Hg208}
   Qbin-Dstrict-Xhdl      #1 lam=  17.360  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-  Qbin-Dstrict-Xhdl      #2 lam=  17.351  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
+  Qbin-Dstrict-Xhdl      #2 lam=  17.350  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
   Qbin-Dstrict-Xhdl      #3 lam=  17.347  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-  Qbin-Dstrict-Xff       #1 lam=  18.042  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+  Qbin-Dstrict-Xff       #1 lam=  18.041  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
   Qbin-Dstrict-Xff       #2 lam=  17.887  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
   Qbin-Dstrict-Xff       #3 lam=  17.768  {Sr92, Zn74, Cr56, Pd114, Sr96, Cd126, Cr60, Zr100, Fe66, Hg208}
   Qbin-Dstrict-Xboth     #1 lam=  17.360  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-  Qbin-Dstrict-Xboth     #2 lam=  17.351  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
+  Qbin-Dstrict-Xboth     #2 lam=  17.350  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
   Qbin-Dstrict-Xboth     #3 lam=  17.347  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-  Qbin-Dlenient-Xnone    #1 lam=  18.042  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+  Qbin-Dlenient-Xnone    #1 lam=  18.041  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
   Qbin-Dlenient-Xnone    #2 lam=  17.887  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
   Qbin-Dlenient-Xnone    #3 lam=  17.777  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Fe66, Hg208, Ti58}
   Qbin-Dlenient-Xhdl     #1 lam=  17.360  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-  Qbin-Dlenient-Xhdl     #2 lam=  17.351  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
+  Qbin-Dlenient-Xhdl     #2 lam=  17.350  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
   Qbin-Dlenient-Xhdl     #3 lam=  17.347  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-  Qbin-Dlenient-Xff      #1 lam=  18.042  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+  Qbin-Dlenient-Xff      #1 lam=  18.041  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
   Qbin-Dlenient-Xff      #2 lam=  17.887  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
   Qbin-Dlenient-Xff      #3 lam=  17.777  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Fe66, Hg208, Ti58}
   Qbin-Dlenient-Xboth    #1 lam=  17.360  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-  Qbin-Dlenient-Xboth    #2 lam=  17.351  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
+  Qbin-Dlenient-Xboth    #2 lam=  17.350  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
   Qbin-Dlenient-Xboth    #3 lam=  17.347  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-  Qbin-Dthree-Xnone      #1 lam=  18.042  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+  Qbin-Dthree-Xnone      #1 lam=  18.041  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
   Qbin-Dthree-Xnone      #2 lam=  17.887  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
   Qbin-Dthree-Xnone      #3 lam=  17.768  {Sr92, Zn74, Cr56, Pd114, Sr96, Cd126, Cr60, Zr100, Fe66, Hg208}
   Qbin-Dthree-Xhdl       #1 lam=  17.360  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-  Qbin-Dthree-Xhdl       #2 lam=  17.351  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
+  Qbin-Dthree-Xhdl       #2 lam=  17.350  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
   Qbin-Dthree-Xhdl       #3 lam=  17.347  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-  Qbin-Dthree-Xff        #1 lam=  18.042  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+  Qbin-Dthree-Xff        #1 lam=  18.041  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
   Qbin-Dthree-Xff        #2 lam=  17.887  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
   Qbin-Dthree-Xff        #3 lam=  17.768  {Sr92, Zn74, Cr56, Pd114, Sr96, Cd126, Cr60, Zr100, Fe66, Hg208}
   Qbin-Dthree-Xboth      #1 lam=  17.360  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-  Qbin-Dthree-Xboth      #2 lam=  17.351  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
+  Qbin-Dthree-Xboth      #2 lam=  17.350  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
   Qbin-Dthree-Xboth      #3 lam=  17.347  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-  Qter-Dstrict-Xnone     #1 lam=  18.042  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+  Qter-Dstrict-Xnone     #1 lam=  18.041  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
   Qter-Dstrict-Xnone     #2 lam=  17.887  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
   Qter-Dstrict-Xnone     #3 lam=  17.768  {Sr92, Zn74, Cr56, Pd114, Sr96, Cd126, Cr60, Zr100, Fe66, Hg208}
   Qter-Dstrict-Xhdl      #1 lam=  17.360  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-  Qter-Dstrict-Xhdl      #2 lam=  17.351  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
+  Qter-Dstrict-Xhdl      #2 lam=  17.350  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
   Qter-Dstrict-Xhdl      #3 lam=  17.347  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-  Qter-Dstrict-Xff       #1 lam=  18.042  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+  Qter-Dstrict-Xff       #1 lam=  18.041  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
   Qter-Dstrict-Xff       #2 lam=  17.887  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
   Qter-Dstrict-Xff       #3 lam=  17.768  {Sr92, Zn74, Cr56, Pd114, Sr96, Cd126, Cr60, Zr100, Fe66, Hg208}
   Qter-Dstrict-Xboth     #1 lam=  17.360  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-  Qter-Dstrict-Xboth     #2 lam=  17.351  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
+  Qter-Dstrict-Xboth     #2 lam=  17.350  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
   Qter-Dstrict-Xboth     #3 lam=  17.347  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-  Qter-Dlenient-Xnone    #1 lam=  18.042  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+  Qter-Dlenient-Xnone    #1 lam=  18.041  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
   Qter-Dlenient-Xnone    #2 lam=  17.887  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
   Qter-Dlenient-Xnone    #3 lam=  17.777  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Fe66, Hg208, Ti58}
   Qter-Dlenient-Xhdl     #1 lam=  17.360  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-  Qter-Dlenient-Xhdl     #2 lam=  17.351  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
+  Qter-Dlenient-Xhdl     #2 lam=  17.350  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
   Qter-Dlenient-Xhdl     #3 lam=  17.347  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-  Qter-Dlenient-Xff      #1 lam=  18.042  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+  Qter-Dlenient-Xff      #1 lam=  18.041  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
   Qter-Dlenient-Xff      #2 lam=  17.887  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
   Qter-Dlenient-Xff      #3 lam=  17.777  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Fe66, Hg208, Ti58}
   Qter-Dlenient-Xboth    #1 lam=  17.360  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-  Qter-Dlenient-Xboth    #2 lam=  17.351  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
+  Qter-Dlenient-Xboth    #2 lam=  17.350  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
   Qter-Dlenient-Xboth    #3 lam=  17.347  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-  Qter-Dthree-Xnone      #1 lam=  18.042  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+  Qter-Dthree-Xnone      #1 lam=  18.041  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
   Qter-Dthree-Xnone      #2 lam=  17.887  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
   Qter-Dthree-Xnone      #3 lam=  17.768  {Sr92, Zn74, Cr56, Pd114, Sr96, Cd126, Cr60, Zr100, Fe66, Hg208}
   Qter-Dthree-Xhdl       #1 lam=  17.360  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-  Qter-Dthree-Xhdl       #2 lam=  17.351  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
+  Qter-Dthree-Xhdl       #2 lam=  17.350  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
   Qter-Dthree-Xhdl       #3 lam=  17.347  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
-  Qter-Dthree-Xff        #1 lam=  18.042  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
+  Qter-Dthree-Xff        #1 lam=  18.041  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ti58}
   Qter-Dthree-Xff        #2 lam=  17.887  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Ar48, Zr100, Fe66, Hg208}
   Qter-Dthree-Xff        #3 lam=  17.768  {Sr92, Zn74, Cr56, Pd114, Sr96, Cd126, Cr60, Zr100, Fe66, Hg208}
   Qter-Dthree-Xboth      #1 lam=  17.360  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Sm156, Zr100, Fe66, Hg208}
-  Qter-Dthree-Xboth      #2 lam=  17.351  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
+  Qter-Dthree-Xboth      #2 lam=  17.350  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Er174}
   Qter-Dthree-Xboth      #3 lam=  17.347  {Sr92, Zn74, Cr56, Pd114, Cd126, Cr60, Zr100, Fe66, Hg208, Ra234}
 
 Scheme-axis effect on price (screened, global, k=8):

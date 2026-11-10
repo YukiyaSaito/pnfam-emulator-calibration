@@ -1,0 +1,19 @@
+=== SLY4 GT-centroid nuclei-selection table ===
+centroid sensitivity b = d(centroid[MeV]) per half-box; F = b^2/sigma_exp^2 (sigma from GT_E_ERR)
+nuc       n    R2   b_vp   b_cs  pR2vp  pR2cs    cbar   cexp   sig    sem    F_vp    F_cs
+Ca48    100  0.77   0.03   2.49   0.00   0.77   11.57  10.00  0.50  0.002       0      25
+Ge76    100  0.84   0.33   2.66   0.01   0.83   12.17  11.13  0.50  0.019       0      28
+Nd150   100  0.85   0.15   2.99   0.00   0.85   16.02  15.25  0.50  0.009       0      36
+Pb208   100  0.90   0.01   4.21   0.00   0.90   16.09  15.60  0.20  0.001       0     443
+Sn112   100  0.99   0.12   2.40   0.00   0.98    9.03   8.94  0.25  0.012       0      92
+Sn132   100  0.97   0.01   5.54   0.00   0.97   17.09  16.30  0.50  0.002       0     123
+Te130   100  0.98   0.31   3.78   0.01   0.97   14.24  13.59  0.50  0.009       0      57
+Zr90    100  0.96   0.05   2.68   0.00   0.96   11.11   9.00  0.50  0.011       0      29
+
+[physics check] max |computed centroid - experimental GTR| across grid means = 2.1 MeV (calibration should close the model-data gap; a few MeV is expected, tens of MeV would signal a window/shift bug)
+
+--- Fisher conditioning in (vpair,cs0): HL-only vs GT-only vs combined ---
+HL SET_A          eig=[  5592. 217038.]  cond=38.8
+GT SET_A(7 nuc)   eig=[8.000e-01 8.331e+02]  cond=1003.5
+HL + GT combined  eig=[  5928. 217535.]  cond=36.7
+HL(A+Ti52,Pt200)+GT combined  eig=[  7583. 232680.]  cond=30.7

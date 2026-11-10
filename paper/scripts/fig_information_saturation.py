@@ -221,7 +221,9 @@ def load(func):
     for n in GT_SET:
         r = gt[n]
         g = np.array([fnum(r, "b_vp"), fnum(r, "b_cs")])
-        s2 = fnum(r, "sigma_MeV") ** 2 + SIGMA_THE_GT[func] ** 2
+        sem = fnum(r, "sigma_em_MeV")          # CV emulator error of the centroid [MeV] (2026-11-10), as in the set search
+        sem = sem if math.isfinite(sem) else 0.0
+        s2 = fnum(r, "sigma_MeV") ** 2 + sem ** 2 + SIGMA_THE_GT[func] ** 2
         B += np.outer(g, g) / s2
     comps = (np.array(a11), np.array(a12), np.array(a22))
     tags = read_csv_dict(os.path.join(ANA, TAG_CSV[func]))
