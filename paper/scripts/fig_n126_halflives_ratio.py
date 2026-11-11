@@ -159,8 +159,9 @@ axb.set_xlabel(r"$Z$")
 axb.set_xlim(ZMIN, ZMAX)
 axb.set_xticks(range(ZMIN, ZMAX + 1, 4))
 axb.set_ylim(*YLIM_B)
-axb.legend(handles=handles_b, loc="upper left", fontsize=6.5, frameon=False, ncol=2, handlelength=2.4,
-           handletextpad=0.4, columnspacing=0.8, borderpad=0.3, labelspacing=0.25)
+# 2026-11-11 (user): single column; the 2-column legend let "RHB-1(D3C*) updated" stick out past the axes
+axb.legend(handles=handles_b, loc="upper left", fontsize=6.5, frameon=False, ncol=1, handlelength=2.4,
+           handletextpad=0.4, borderpad=0.3, labelspacing=0.25)
 axb.text(0.03, 0.04, "(b)", transform=axb.transAxes, ha="left", va="bottom")
 
 ps.save(fig, OUT)
