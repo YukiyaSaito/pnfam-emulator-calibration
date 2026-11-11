@@ -43,11 +43,11 @@ RUNS = [  # (functional key, run directory)
 ]
 LEVELS = (0.68, 0.95)           # credible-mass contours
 ME_POINT = (-346.352, 128.279)  # Mustonen & Engel (2016), SkO'
-XLIM, YLIM = (-460, 0), (50, 180)     # 2026-11-11: same limits as Fig. 5 (fig_posteriors_final.py); was (-470, 0), (40, 180)
+XLIM, YLIM = (-470, 0), (40, 200)     # 2026-11-11: upper C1s limit raised from 180 so the legend sits above the contours; band C1s < 50 stays visible
 C1S_LOWER = 50.0                # common lower bound of the C1s prior
 FILL = True                     # graded fill inside the 95% contour (False = lines only)
 LINE_ALPHA = 0.6                # transparency of the contour lines
-VLINE_YMAX = 0.70               # V_min lines in the main panel end at this axes fraction (below the legend)
+VLINE_YMAX = 0.74               # V_min lines in the main panel end at this axes fraction (below the legend)
 BW_FACTOR = 1.0                 # KDE bandwidth / Scott's factor (bayes_plot default 0.5 is wobbly at this size)
 OUT_SUFFIX = ""                 # set e.g. "_lines" to keep a variant beside the main file
 # ------------------------------------------------------------------------------
@@ -104,7 +104,7 @@ ax.plot(*ME_POINT, marker="*", ms=9, color=ps.OKABE_ITO["SKOP"], mec="k", mew=0.
 ax.set_xlim(XLIM); ax.set_ylim(YLIM)
 ax.set_xlabel(r"$V_0$ (MeV\,fm$^3$)")
 ax.set_ylabel(r"$C_1^s$ (MeV\,fm$^3$)")
-ax.legend(frameon=False, fontsize=7, loc="upper right")   # 2026-11-11: moved from upper left, where the dotted V_min lines crossed the legend text
+ax.legend(frameon=False, fontsize=7, loc="upper left")    # 2026-11-11: the V_min lines end below the legend (VLINE_YMAX), so they no longer cross its text
 for a in (ax_top, ax_right):
     a.axis("off")
 ax_top.set_ylim(bottom=0)
