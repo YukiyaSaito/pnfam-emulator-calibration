@@ -45,7 +45,7 @@ LEVELS = (0.68, 0.95)           # credible-mass contours
 ME_POINT = (-346.352, 128.279)  # Mustonen & Engel (2016), SkO'
 XLIM, YLIM = (-470, 0), (40, 200)     # 2026-11-11: upper C1s limit raised from 180 so the legend sits above the contours; band C1s < 50 stays visible
 C1S_LOWER = 50.0                # common lower bound of the C1s prior
-FILL = True                     # graded fill inside the 95% contour (False = lines only)
+FILL = True                     # light fill inside the 68% contour (False = lines only)
 LINE_ALPHA = 0.6                # transparency of the contour lines
 BW_FACTOR = 1.0                 # KDE bandwidth / Scott's factor (bayes_plot default 0.5 is wobbly at this size)
 OUT_SUFFIX = ""                 # set e.g. "_lines" to keep a variant beside the main file
@@ -81,9 +81,8 @@ for func, run in RUNS:
     n_bands = 8
     fill_levels = np.linspace(lv[0], f.max(), n_bands + 1)
     alphas = np.linspace(0.10, 0.65, n_bands)
-    if FILL:
-        ax.contourf(est["VV"], est["CC"], f, levels=fill_levels,
-                    colors=[to_rgba(color, a) for a in alphas])
+    if FILL:   # 2026-11-11: one light fill inside the 68% contour (the eight-band gradient of three functionals was too busy)
+        ax.contourf(est["VV"], est["CC"], f, levels=[lv[-1], f.max()], colors=[to_rgba(color, 0.25)])
     ax.contour(est["VV"], est["CC"], f, levels=lv, colors=[to_rgba(color, LINE_ALPHA)],
                linewidths=(0.7, 1.0)[-len(lv):], linestyles=("dashed", "solid")[-len(lv):])
     ax.plot([], [], color=color, lw=1.4, label=ps.LABELS[func])   # legend proxy
