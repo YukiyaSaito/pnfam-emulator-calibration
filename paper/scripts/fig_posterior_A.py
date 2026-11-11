@@ -43,10 +43,11 @@ RUNS = [  # (functional key, run directory)
 ]
 LEVELS = (0.68, 0.95)           # credible-mass contours
 ME_POINT = (-346.352, 128.279)  # Mustonen & Engel (2016), SkO'
-XLIM, YLIM = (-470, 0), (40, 180)
+XLIM, YLIM = (-460, 0), (50, 180)     # 2026-11-11: same limits as Fig. 5 (fig_posteriors_final.py); was (-470, 0), (40, 180)
 C1S_LOWER = 50.0                # common lower bound of the C1s prior
 FILL = True                     # graded fill inside the 95% contour (False = lines only)
 LINE_ALPHA = 0.6                # transparency of the contour lines
+VLINE_YMAX = 0.70               # V_min lines in the main panel end at this axes fraction (below the legend)
 BW_FACTOR = 1.0                 # KDE bandwidth / Scott's factor (bayes_plot default 0.5 is wobbly at this size)
 OUT_SUFFIX = ""                 # set e.g. "_lines" to keep a variant beside the main file
 # ------------------------------------------------------------------------------
@@ -88,7 +89,7 @@ for func, run in RUNS:
                linewidths=(0.7, 1.0)[-len(lv):], linestyles=("dashed", "solid")[-len(lv):])
     ax.plot([], [], color=color, lw=1.4, label=ps.LABELS[func])   # legend proxy
     vlo = spec["vpair"]["lower"]
-    ax.axvline(vlo, color=color, lw=0.8, ls=":")
+    ax.axvline(vlo, color=color, lw=0.8, ls=":", ymax=VLINE_YMAX)   # stops below the legend; full height in the top marginal
     ax_top.axvline(vlo, color=color, lw=0.8, ls=":")
     ax_top.fill_between(vg, 0.0, np.nan_to_num(est["mv"]), color=color, alpha=0.3, lw=0)
     ax_top.plot(vg, est["mv"], color=color, lw=0.8)
@@ -99,11 +100,11 @@ for func, run in RUNS:
 ax.axhspan(YLIM[0], C1S_LOWER, color="0.85", zorder=0)
 ax_right.axhspan(YLIM[0], C1S_LOWER, color="0.85", zorder=0)
 ax.plot(*ME_POINT, marker="*", ms=9, color=ps.OKABE_ITO["SKOP"], mec="k", mew=0.4,
-        ls="none", label=r"Mustonen \& Engel (2016), SkO$'$")
+        ls="none", label=r"Mustonen \& Engel (2016)")   # SkO' stated in the caption; shorter label keeps the legend clear of the V_min lines
 ax.set_xlim(XLIM); ax.set_ylim(YLIM)
 ax.set_xlabel(r"$V_0$ (MeV\,fm$^3$)")
 ax.set_ylabel(r"$C_1^s$ (MeV\,fm$^3$)")
-ax.legend(frameon=False, fontsize=7, loc="upper left")
+ax.legend(frameon=False, fontsize=7, loc="upper right")   # 2026-11-11: moved from upper left, where the dotted V_min lines crossed the legend text
 for a in (ax_top, ax_right):
     a.axis("off")
 ax_top.set_ylim(bottom=0)

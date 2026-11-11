@@ -10,3 +10,4 @@ __pycache__/
 
 # local backups of superseded outputs (not part of the record)
 .pre_gtsem/
+.pre_fig3/
