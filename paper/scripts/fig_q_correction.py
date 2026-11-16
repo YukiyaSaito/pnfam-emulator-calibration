@@ -114,8 +114,7 @@ panel(ax2, "Qexp", "res", "(b)")
 ax2.set_xlabel("$Q_\\beta^{\\mathrm{exp}}$ (MeV)")
 ax2.set_ylabel("$Q_\\beta^{\\mathrm{corr}} - Q_\\beta^{\\mathrm{exp}}$ (MeV)")
 ax2.set_xlim(-0.3, 18.6)
-ax2.text(0.04, 0.66, "$%+.3f$\n$%+.4f\\,(N-Z)$\n$%+.4f\\,(N+Z)$" % (a, b, c), transform=ax2.transAxes,
-         ha="left", va="top", fontsize=8.5, color="k", linespacing=1.15)   # fitted shift, three lines under the legend (back by user request 2026-10-21)
+# 2026-11-15 (collaborator): the fitted coefficients are no longer printed in panel (b); they are in Table I.
 lo, hi = ax1.get_ylim()                 # shared y range; room above the data for the inset
 ax1.set_ylim(lo - 0.08 * (hi - lo), hi + 0.60 * (hi - lo))
 fig.tight_layout(h_pad=0.8)
