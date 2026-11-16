@@ -136,7 +136,7 @@ lines.append(r"Predicted $\beta_2$ as in Table~\ref{tab:pool_hl}.}")
 lines.append(r"\begin{ruledtabular}")
 lines.append(r"\begin{tabular}{lrrrrcrrr}")
 lines.append(r"Nucleus & $Z$ & $N$ & $A$ & $E_{\rm GT}^{\rm exp}$ (MeV) & Ref. & " +
-             " & ".join(rf"$\beta_2$ ({HEAD[F]})" for F in FUNCS) + r" \\")
+             " & ".join(rf"$\beta_2$({lab})" for lab in ("I", "II", "III")) + r" \\")   # 2026-11-16 (user): as Table IV
 lines.append(r"\colrule")
 for n in GT_ORDER:
     key = n  # config keys use 'Ca_48' style for GT
@@ -145,7 +145,7 @@ for n in GT_ORDER:
     Z, N = ZN[n]
     cells = [latex_nuc(n), str(Z), str(N), str(Z + N), rf"${e:.1f} \pm {de:g}$",
              rf"\cite{{{GT_REF[n]}}}"]
-    cells += [fmt_b2(gtb2[n][F]) for F in FUNCS]
+    cells += [fmt_b2_hl(gtb2[n][F]) for F in FUNCS]
     lines.append(" & ".join(cells) + r" \\")
 lines.append(r"\end{tabular}")
 lines.append(r"\end{ruledtabular}")
