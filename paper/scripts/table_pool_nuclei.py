@@ -71,6 +71,17 @@ def fmt_b2(b):
     return f"{b:+.3f}"
 
 
+def fmt_b2_hl(b):
+    """Two decimals for the half-life table (user 2026-11-16), rounded half away from zero from the
+    four-decimal tag-table value; |beta2| < 0.005 printed as 0.00."""
+    from decimal import Decimal, ROUND_HALF_UP
+    b = float(b)
+    if abs(b) < 0.005:
+        return "0.00"
+    r = Decimal(str(abs(b))).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    return ("+" if b > 0 else "-") + str(r)
+
+
 # ---- half-life nuclei --------------------------------------------------------
 tags = {F: {r["nucleus"]: r for r in csv.DictReader(open(os.path.join(ANA, TAG[F])))} for F in FUNCS}
 pool = sorted(config.HL_SET_POOL42, key=lambda n: (int(tags["SKOP"][n]["Z"]), int(tags["SKOP"][n]["N"])))
@@ -82,20 +93,20 @@ lines.append(r"\begin{table*}[t]")
 lines.append(r"\caption{\label{tab:pool_hl}%")
 lines.append(r"Nuclei whose $\beta$-decay half-lives are part of the calibration pool, and their")
 lines.append(r"experimental half-lives and uncertainties from Ref.~\cite{Kondev2021}, as well as the predicted quadrupole")
-lines.append(r"deformation $\beta_2$ of the HFB ground state obtained with each functional.")
+lines.append(r"deformation $\beta_2$ of the HFB ground state obtained with each functional (I=SkO$'$, II=SLy4, III=UNEDF1-HFB).")
 lines.append(r"A dagger marks the two nuclei per functional that are")
 lines.append(r"excluded from that functional's pool because their decay rates fall below the resolution of the")
 lines.append(r"calculation (Sec.~\ref{subsec:optimal_sets}).}")
 lines.append(r"\begin{ruledtabular}")
 lines.append(r"\begin{tabular}{lrrrrrrr}")
 lines.append(r"Nucleus & $Z$ & $N$ & $A$ & $T_{1/2}^{\rm exp}$ (s) & " +
-             " & ".join(rf"$\beta_2$ ({HEAD[F]})" for F in FUNCS) + r" \\")
+             " & ".join(rf"$\beta_2$({lab})" for lab in ("I", "II", "III")) + r" \\")   # 2026-11-16 (user): roman labels
 lines.append(r"\colrule")
 for n in pool:
     t = tags["SKOP"][n]
     cells = [latex_nuc(n), t["Z"], t["N"], t["A"], fmt_pm(config.HL_EXP[n], config.HL_ERR[n])]
     for F in FUNCS:
-        b = fmt_b2(tags[F][n]["beta2"])
+        b = fmt_b2_hl(tags[F][n]["beta2"])
         if n in config.HL_EXCL_QCORR[F]:
             b += r"$^\dagger$"
         cells.append(b)
