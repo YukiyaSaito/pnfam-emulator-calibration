@@ -22,6 +22,7 @@ Inputs : results/<F>/bayes_t4gtt4_sthe1_domw10_q_<set>_gtall[_<F>]_sem21001/cent
          Beta_decay/config.py HL_EXP / HL_ERR (seconds)
 Outputs: fig_v7_pool_residuals.{pdf,png}; table calibration/analysis/V7_POOL_RESIDUALS_2026-10-19.txt
 """
+import argparse
 import ast
 import os
 import sys
@@ -58,6 +59,15 @@ RUNS = {
 PCT = (2.5, 16.0, 50.0, 84.0, 97.5)
 G8_SETS = {F: RP.SET_KEYS[F]["G10"] for F in RP.FUNCTIONALS}   # G10 membership (hatched columns)
 # RUNS second entry = the adopted set (L10 for every functional, 2026-11-05): L10_SKOP, L10_SLY4, G10_HFB1 (= L10_HFB1)
+# 2026-11-19 (user): optional subset of functionals, e.g. "--funcs SKOP,HFB1 --suffix _2func" writes
+# fig_pool_residuals_2func.{pdf,png} and pool_residuals_2func.txt; without options the three-panel figure is unchanged.
+_ap = argparse.ArgumentParser()
+_ap.add_argument("--funcs", default=",".join(RUNS), help="comma-separated subset of SKOP,SLY4,HFB1 (panel order as in RUNS)")
+_ap.add_argument("--suffix", default="", help="suffix for the output stem and data file")
+_args = _ap.parse_args()
+FUNCS = [F for F in RUNS if F in _args.funcs.split(",")]
+OUT += _args.suffix
+OUT_TXT = OUT_TXT[:-4] + _args.suffix + ".txt"
 
 
 class HLEmulator:
@@ -130,7 +140,10 @@ def main():
     ney_table, zn_of = load_ney()
     ney_res = {}            # nucleus -> log10(T_Ney/T_exp)
     ours_res_skop = {}      # nucleus -> SkO' Full surface at median couplings minus measured (same quantity as f_med_full)
-    fig, axes = plt.subplots(3, 1, figsize=(ps.TEXT_WIDTH, 6.6), sharex=True)
+    fig, axes = plt.subplots(len(FUNCS), 1, figsize=(ps.TEXT_WIDTH, 2.2 * len(FUNCS)), sharex=True)
+    axes = np.atleast_1d(axes)
+    ax_of = dict(zip(FUNCS, axes))
+    scratch = plt.figure()   # functionals not in FUNCS are still computed (same random stream as the three-panel figure) but drawn here and discarded
     # common x axis: the 42-nucleus pool; a functional's two excluded nuclei leave an empty column
     pool42 = sorted(config.HL_SET_POOL42, key=lambda n: (mass(n), n))
     xpos = {n: i for i, n in enumerate(pool42)}
@@ -142,7 +155,8 @@ def main():
              "functional\tnucleus\tA\tmember\tqdom\tsig_exp\tsig_em\tsig_Q\tfull_p2.5\tfull_p16\tfull_p50\tfull_p84\tfull_p97.5\tfull_in68\tfull_in95"
              "\tset_p2.5\tset_p16\tset_p50\tset_p84\tset_p97.5\tset_in68\tset_in95\tf_med_full\tney_resid"]
     summary = []
-    for ax, F in zip(axes, RUNS):
+    for F in RUNS:
+        ax = ax_of[F] if F in ax_of else scratch.add_subplot()
         full = load_run(F, RUNS[F][0])
         sett = load_run(F, RUNS[F][1])
         nuclei = sorted(full["nuclei"], key=lambda n: (mass(n), n))
@@ -216,6 +230,9 @@ def main():
         # (coverage text removed 2026-10-20, user; the numbers stay in the data file summary)
         ax.set_ylim(-7.5, 7.5)
         summary.append((F, n, cov, n_non, rms_med, rms_model, sthe_med))
+    plt.close(scratch)
+    lines = [l for l in lines if l.startswith("#") or l.startswith("functional") or l.split("\t")[0] in FUNCS]
+    summary = [t for t in summary if t[0] in FUNCS]
     # legend on the top panel (user 2026-10-28), lower left, below the SkO' bars
     ax = axes[0]
     h = [plt.Line2D([], [], marker="o", ms=3, color="0.3", lw=1.8, label="Full (68\\% thick, 95\\% thin)"),
@@ -235,11 +252,12 @@ def main():
                      f"RMS residual at median couplings {rms_med:.3f} log10 s vs model expectation sqrt(mean(sigma_the^2+sigma_exp^2+sigma_em^2+sigma_Q^2)) = {rms_model:.3f} (median sigma_HL {sthe_med:.3f})")
         print(lines[-1])
     common = sorted(set(ney_res) & set(ours_res_skop))
-    rms_ney = float(np.sqrt(np.mean([ney_res[k] ** 2 for k in common])))
-    rms_ours = float(np.sqrt(np.mean([ours_res_skop[k] ** 2 for k in common])))
-    lines.append(f"Ney et al. SkO' (log10(T_Ney/T_exp)) on {len(common)} pool nuclei (no Ar48, Pt200): RMS {rms_ney:.3f}; "
-                 f"our SkO' Full surface at median couplings on the same nuclei: RMS {rms_ours:.3f}")
-    print(lines[-1])
+    if common:   # empty when SKOP is not among FUNCS
+        rms_ney = float(np.sqrt(np.mean([ney_res[k] ** 2 for k in common])))
+        rms_ours = float(np.sqrt(np.mean([ours_res_skop[k] ** 2 for k in common])))
+        lines.append(f"Ney et al. SkO' (log10(T_Ney/T_exp)) on {len(common)} pool nuclei (no Ar48, Pt200): RMS {rms_ney:.3f}; "
+                     f"our SkO' Full surface at median couplings on the same nuclei: RMS {rms_ours:.3f}")
+        print(lines[-1])
     with open(OUT_TXT, "w") as fh:
         fh.write("\n".join(lines) + "\n")
     print("wrote", OUT_TXT)
